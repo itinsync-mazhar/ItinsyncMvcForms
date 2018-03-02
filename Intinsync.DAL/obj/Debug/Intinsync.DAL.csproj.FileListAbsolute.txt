@@ -5,10 +5,14 @@ D:\Intinsync.MvcForms\Intinsync.DAL\bin\Debug\EntityFramework.dll
 D:\Intinsync.MvcForms\Intinsync.DAL\bin\Debug\EntityFramework.SqlServer.dll
 D:\Intinsync.MvcForms\Intinsync.DAL\bin\Debug\Itinsync.BusinessModel.dll
 D:\Intinsync.MvcForms\Intinsync.DAL\bin\Debug\Itinsync.NonBusinessModel.dll
+D:\Intinsync.MvcForms\Intinsync.DAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Intinsync.MvcForms\Intinsync.DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\Intinsync.MvcForms\Intinsync.DAL\bin\Debug\Itinsync.BusinessModel.pdb
 D:\Intinsync.MvcForms\Intinsync.DAL\bin\Debug\Itinsync.NonBusinessModel.pdb
 D:\Intinsync.MvcForms\Intinsync.DAL\bin\Debug\EntityFramework.xml
 D:\Intinsync.MvcForms\Intinsync.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Intinsync.MvcForms\Intinsync.DAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Intinsync.MvcForms\Intinsync.DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\Intinsync.MvcForms\Intinsync.DAL\obj\Debug\Intinsync.DAL.csprojResolveAssemblyReference.cache
 D:\Intinsync.MvcForms\Intinsync.DAL\obj\Debug\Intinsync.DAL.dll
 D:\Intinsync.MvcForms\Intinsync.DAL\obj\Debug\Intinsync.DAL.pdb

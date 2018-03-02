@@ -86,5 +86,7 @@ D:\Intinsync.MvcForms\Intinsync.MvcForms\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Intinsync.MvcForms\Intinsync.MvcForms\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Intinsync.MvcForms\Intinsync.MvcForms\bin\Intinsync.DAL.pdb
 D:\Intinsync.MvcForms\Intinsync.MvcForms\obj\Debug\Itinsync.MvcForms.csprojResolveAssemblyReference.cache
+D:\Intinsync.MvcForms\Intinsync.MvcForms\obj\Debug\Intinsync.MvcForms.Migrations.initial_commits.resources
+D:\Intinsync.MvcForms\Intinsync.MvcForms\obj\Debug\Itinsync.MvcForms.csproj.GenerateResource.Cache
 D:\Intinsync.MvcForms\Intinsync.MvcForms\obj\Debug\Intinsync.MvcForms.dll
 D:\Intinsync.MvcForms\Intinsync.MvcForms\obj\Debug\Intinsync.MvcForms.pdb

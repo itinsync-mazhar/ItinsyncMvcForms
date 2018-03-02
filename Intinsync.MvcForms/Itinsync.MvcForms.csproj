@@ -195,15 +195,19 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Areas\IntinsyncMcd100\IntinsyncMcd100AreaRegistration.cs" />
     <Compile Include="Areas\IntinsyncMcd200\IntinsyncMcd200AreaRegistration.cs" />
     <Compile Include="Areas\IntinsyncMcd300\IntinsyncMcd300AreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DBContexts\IdentityContext\201803021314102_initial_commits.cs" />
+    <Compile Include="DBContexts\IdentityContext\201803021314102_initial_commits.Designer.cs">
+      <DependentUpon>201803021314102_initial_commits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBContexts\IdentityDB.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="DBContexts\IdentityContext\Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -224,7 +228,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Areas\IntinsyncMcd100\Views\web.config" />
     <Content Include="Areas\IntinsyncMcd200\Views\web.config" />
     <Content Include="Areas\IntinsyncMcd300\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -273,12 +276,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\IntinsyncMcd100\Controllers\" />
-    <Folder Include="Areas\IntinsyncMcd100\Models\" />
-    <Folder Include="Areas\IntinsyncMcd100\Views\Shared\" />
     <Folder Include="Areas\IntinsyncMcd200\Controllers\" />
     <Folder Include="Areas\IntinsyncMcd200\Models\" />
     <Folder Include="Areas\IntinsyncMcd200\Views\Shared\" />
@@ -307,6 +308,11 @@
       <Project>{1e9ca12f-c6bf-4e72-b5e0-73047a0da94f}</Project>
       <Name>Itinsync.NonBusinessModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DBContexts\IdentityContext\201803021314102_initial_commits.resx">
+      <DependentUpon>201803021314102_initial_commits.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

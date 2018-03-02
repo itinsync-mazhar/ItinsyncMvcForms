@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5633321242d34f6389125193632aa585" Name="Diagram1">
+        <EntityTypeShape EntityType="kvcModel.ApplicationCode" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.CrossTable_businesstransaction" Width="1.5" PointX="0.75" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.CrossTable_pagename" Width="1.5" PointX="9" PointY="50.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.CrossTable_vendor" Width="1.5" PointX="0.75" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.Document" Width="1.5" PointX="6" PointY="37.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.DocumentAlert" Width="1.5" PointX="3" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.Store" Width="1.5" PointX="3" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.Task" Width="1.5" PointX="5.25" PointY="52.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentDefinition" Width="1.5" PointX="3" PointY="43" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentFrequency" Width="1.5" PointX="8.25" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentReferedContent" Width="1.5" PointX="5.25" PointY="45.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentRole" Width="1.5" PointX="8.25" PointY="47.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentRoleAlert" Width="1.5" PointX="11.25" PointY="42.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentRoleRoute" Width="1.5" PointX="11.25" PointY="45.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentRoute" Width="1.5" PointX="11.25" PointY="39.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentRouteUser" Width="1.5" PointX="8.25" PointY="34.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentSection" Width="1.5" PointX="11.25" PointY="48.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentStore" Width="1.5" PointX="8.25" PointY="43.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentTable" Width="1.5" PointX="13.5" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentTableContent" Width="1.5" PointX="23.25" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentTableTD" Width="1.5" PointX="21" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentTableTR" Width="1.5" PointX="18.75" PointY="40.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XDocumentUserAlert" Width="1.5" PointX="13.5" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XReportDefinition" Width="1.5" PointX="11.25" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XReportSection" Width="1.5" PointX="16.5" PointY="42" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XReportTable" Width="1.5" PointX="13.5" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XReportTableContent" Width="1.5" PointX="16.5" PointY="46.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XReportTableTD" Width="1.5" PointX="18" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XReportTableTR" Width="1.5" PointX="15.75" PointY="38" IsExpanded="true" />
+        <EntityTypeShape EntityType="kvcModel.XTaskDefinition" Width="1.5" PointX="3" PointY="67.625" IsExpanded="true" />
+        <AssociationConnector Association="kvcModel.FK_Document_XDocuments_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_DocumentAlert_XDocuments_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_Stores_XDocuments_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_Task_XDocuments_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentDefinition_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentReferedContent_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentRole_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentRoleAlert_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentRoleRoute_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentRoute_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentRouteUsers_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentSection_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentStore_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentTable_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentTableContent_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentTableTD_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentTableTR_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentUserAlert_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportDefinition_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportSection_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportTable_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportTableContent_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportTableTD_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportTableTR_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XTaskDefinition_CrossTable_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentSection_CrossTable_pagename" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentSection_CrossTable_pagename1" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_Document_XDocument_Vendor" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_Stores_XDocuments_vendor" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_Task_XDocuments_vendor" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentDefinition_CrossTable_vendor" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportDefinition_CrossTable_vendor" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_Document_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_document_stores" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_document_xdocumentdefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_document_xdocumentfrequency" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_documentalert_xdocumentfrequency" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentFrequency_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentRouteUsers_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentStore_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentUserAlert_Stores" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_Task_XTaskDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentFrequency_XDocumentDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentReferedContent_XDocumentDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentRole_XDocumentDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentRoleAlert_XDocumentDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentRoleRoute_XDocumentDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentRoute_XDocumentDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentRouteUsers_XDocumentDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentSection_XDocumentDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentStore_XDocumentDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentUserAlert_XDocumentDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportDefinition_XDocumentDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentUserAlert_XDocumentFrequency" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentReferedContent_XDocumentSection" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentReferedContent_XDocumentTableContent" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentTable_XDocumentSection" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportSection_XDocumentSection" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportTableContent_XDocumentSection" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentTableTR_XDocumentTable" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentTableContent_XDocumentTableTD" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XDocumentTableTD_XDocumentTableTR" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportSection_XReportDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportTable_XReportDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportTableTR_XReportTable" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportTableContent_XReportTableTD" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XReportTableTD_XReportTableTR" ManuallyRouted="false" />
+        <AssociationConnector Association="kvcModel.FK_XTaskDefinition_XTaskDefinition" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

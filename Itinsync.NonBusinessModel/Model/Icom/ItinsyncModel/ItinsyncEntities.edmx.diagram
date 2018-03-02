@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a7becd6ba65b44f4ac4db61181ca839a" Name="Diagram1">
+        <EntityTypeShape EntityType="ItinsyncModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.AspNetUser" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.Audit" Width="1.5" PointX="5.25" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.BatchManagement" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.BusinessTransaction" Width="1.5" PointX="0.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.EmailConfig" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.Lookup" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.LookupTran" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.PageName" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.Permission" Width="1.5" PointX="5.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.Team" Width="1.5" PointX="8.25" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.UserAccount" Width="1.5" PointX="5.25" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.UserPermission" Width="1.5" PointX="7.5" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.UserPermissionProfile" Width="1.5" PointX="10.5" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.UserRole" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.UserStore" Width="1.5" PointX="10.5" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.UserTeam" Width="1.5" PointX="10.5" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.Vendor" Width="1.5" PointX="3" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItinsyncModel.vendordevice" Width="1.5" PointX="7.5" PointY="30" IsExpanded="true" />
+        <AssociationConnector Association="ItinsyncModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_audit_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_audit_useraccounts" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_audit_vendor" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_emailconfig_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_pagename_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_permission_businesstransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_Team_BusinessTransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_UserAccounts_BusinessTransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_UserPermission_BusinessTransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_UserPermissionProfile_BusinessTransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_UserStore_BusinessTransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_UserTeam_BusinessTransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_Vendor_BusinessTransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_vendordevice_BusinessTransaction" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_permission_pagename" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_Team_Vendor" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_UserTeam_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_UserAccounts_Vendor" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_UserPermission_UserAccounts" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_UserPermissionProfile_UserAccounts" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_UserStore_UserAccounts" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_UserTeam_UserAccounts" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_vendordevice_UserAccounts" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.FK_vendordevice_Vendor" ManuallyRouted="false" />
+        <AssociationConnector Association="ItinsyncModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

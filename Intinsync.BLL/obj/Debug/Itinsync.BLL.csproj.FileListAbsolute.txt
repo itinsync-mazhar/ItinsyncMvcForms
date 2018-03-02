@@ -1,0 +1,13 @@
+D:\Intinsync.MvcForms\Intinsync.BLL\bin\Debug\Intinsync.BLL.dll
+D:\Intinsync.MvcForms\Intinsync.BLL\bin\Debug\Intinsync.BLL.pdb
+D:\Intinsync.MvcForms\Intinsync.BLL\bin\Debug\Intinsync.DAL.dll
+D:\Intinsync.MvcForms\Intinsync.BLL\bin\Debug\Itinsync.BusinessModel.dll
+D:\Intinsync.MvcForms\Intinsync.BLL\bin\Debug\Itinsync.NonBusinessModel.dll
+D:\Intinsync.MvcForms\Intinsync.BLL\bin\Debug\EntityFramework.dll
+D:\Intinsync.MvcForms\Intinsync.BLL\bin\Debug\Intinsync.DAL.pdb
+D:\Intinsync.MvcForms\Intinsync.BLL\bin\Debug\Itinsync.BusinessModel.pdb
+D:\Intinsync.MvcForms\Intinsync.BLL\bin\Debug\Itinsync.NonBusinessModel.pdb
+D:\Intinsync.MvcForms\Intinsync.BLL\bin\Debug\EntityFramework.xml
+D:\Intinsync.MvcForms\Intinsync.BLL\obj\Debug\Itinsync.BLL.csprojResolveAssemblyReference.cache
+D:\Intinsync.MvcForms\Intinsync.BLL\obj\Debug\Intinsync.BLL.dll
+D:\Intinsync.MvcForms\Intinsync.BLL\obj\Debug\Intinsync.BLL.pdb

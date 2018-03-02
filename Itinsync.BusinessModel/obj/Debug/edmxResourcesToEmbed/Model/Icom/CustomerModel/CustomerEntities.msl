@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="kvcModelStoreContainer" CdmEntityContainer="kvcEntities">
+    <EntitySetMapping Name="ApplicationCodes">
+      <EntityTypeMapping TypeName="kvcModel.ApplicationCode">
+        <MappingFragment StoreEntitySet="ApplicationCode">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="DOMAINHOST" ColumnName="DOMAINHOST" />
+          <ScalarProperty Name="BASE_LOCATION" ColumnName="BASE_LOCATION" />
+          <ScalarProperty Name="PRODUCTION_MODE" ColumnName="PRODUCTION_MODE" />
+          <ScalarProperty Name="CACHECOUNT" ColumnName="CACHECOUNT" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrossTable_businesstransaction">
+      <EntityTypeMapping TypeName="kvcModel.CrossTable_businesstransaction">
+        <MappingFragment StoreEntitySet="CrossTable_businesstransaction">
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrossTable_pagename">
+      <EntityTypeMapping TypeName="kvcModel.CrossTable_pagename">
+        <MappingFragment StoreEntitySet="CrossTable_pagename">
+          <ScalarProperty Name="pageID" ColumnName="pageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrossTable_vendor">
+      <EntityTypeMapping TypeName="kvcModel.CrossTable_vendor">
+        <MappingFragment StoreEntitySet="CrossTable_vendor">
+          <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="kvcModel.Document">
+        <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="documentID" ColumnName="documentID" />
+          <ScalarProperty Name="documentName" ColumnName="documentName" />
+          <ScalarProperty Name="documentDefinitionID" ColumnName="documentDefinitionID" />
+          <ScalarProperty Name="transDate" ColumnName="transDate" />
+          <ScalarProperty Name="transTime" ColumnName="transTime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="paramsXML" ColumnName="paramsXML" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="filePath" ColumnName="filePath" />
+          <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+          <ScalarProperty Name="storeID" ColumnName="storeID" />
+          <ScalarProperty Name="flow" ColumnName="flow" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="parentRef" ColumnName="parentRef" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="startDateTime" ColumnName="startDateTime" />
+          <ScalarProperty Name="frequencyID" ColumnName="frequencyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentAlerts">
+      <EntityTypeMapping TypeName="kvcModel.DocumentAlert">
+        <MappingFragment StoreEntitySet="DocumentAlert">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="frequencyID" ColumnName="frequencyID" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+          <ScalarProperty Name="transDateTime" ColumnName="transDateTime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stores">
+      <EntityTypeMapping TypeName="kvcModel.Store">
+        <MappingFragment StoreEntitySet="Stores">
+          <ScalarProperty Name="storeID" ColumnName="storeID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="storeLink" ColumnName="storeLink" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Walmart" ColumnName="Walmart" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="storeNo" ColumnName="storeNo" />
+          <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="storeEmail" ColumnName="storeEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="kvcModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="kvcModel.Task">
+        <MappingFragment StoreEntitySet="Task">
+          <ScalarProperty Name="taskID" ColumnName="taskID" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+          <ScalarProperty Name="transDateTime" ColumnName="transDateTime" />
+          <ScalarProperty Name="dueDate" ColumnName="dueDate" />
+          <ScalarProperty Name="deadLineDate" ColumnName="deadLineDate" />
+          <ScalarProperty Name="taskDefinitionID" ColumnName="taskDefinitionID" />
+          <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+          <ScalarProperty Name="teamID" ColumnName="teamID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="parentRef" ColumnName="parentRef" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+          <ScalarProperty Name="dueTime" ColumnName="dueTime" />
+          <ScalarProperty Name="deadLineTime" ColumnName="deadLineTime" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentDefinitions">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentDefinition">
+        <MappingFragment StoreEntitySet="XDocumentDefinition">
+          <ScalarProperty Name="xDocumentDefinationID" ColumnName="xDocumentDefinationID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="rdlcPath" ColumnName="rdlcPath" />
+          <ScalarProperty Name="dataTable" ColumnName="dataTable" />
+          <ScalarProperty Name="parameters" ColumnName="parameters" />
+          <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+          <ScalarProperty Name="storage" ColumnName="storage" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="sequential" ColumnName="sequential" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentFrequencies">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentFrequency">
+        <MappingFragment StoreEntitySet="XDocumentFrequency">
+          <ScalarProperty Name="xDocumentFormFrequencyID" ColumnName="xDocumentFormFrequencyID" />
+          <ScalarProperty Name="storeID" ColumnName="storeID" />
+          <ScalarProperty Name="formType" ColumnName="formType" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="startTimeTime" ColumnName="startTimeTime" />
+          <ScalarProperty Name="xDocumentDefinitionID" ColumnName="xDocumentDefinitionID" />
+          <ScalarProperty Name="day" ColumnName="day" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="repeatFrequency" ColumnName="repeatFrequency" />
+          <ScalarProperty Name="parentFrequencyId" ColumnName="parentFrequencyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentReferedContents">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentReferedContent">
+        <MappingFragment StoreEntitySet="XDocumentReferedContent">
+          <ScalarProperty Name="referedContentID" ColumnName="referedContentID" />
+          <ScalarProperty Name="documentSectionID" ColumnName="documentSectionID" />
+          <ScalarProperty Name="controlID" ColumnName="controlID" />
+          <ScalarProperty Name="translation" ColumnName="translation" />
+          <ScalarProperty Name="documentDefinitionID" ColumnName="documentDefinitionID" />
+          <ScalarProperty Name="documentContentID" ColumnName="documentContentID" />
+          <ScalarProperty Name="isFrwdToNextSubmittedForms" ColumnName="isFrwdToNextSubmittedForms" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentRoles">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentRole">
+        <MappingFragment StoreEntitySet="XDocumentRole">
+          <ScalarProperty Name="xDocumentRoleID" ColumnName="xDocumentRoleID" />
+          <ScalarProperty Name="xDocumentDefinitionID" ColumnName="xDocumentDefinitionID" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentRoleAlerts">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentRoleAlert">
+        <MappingFragment StoreEntitySet="XDocumentRoleAlert">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="xDocumentDefinitionID" ColumnName="xDocumentDefinitionID" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentRoleRoutes">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentRoleRoute">
+        <MappingFragment StoreEntitySet="XDocumentRoleRoute">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="xDocumentDefinitionID" ColumnName="xDocumentDefinitionID" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentRoutes">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentRoute">
+        <MappingFragment StoreEntitySet="XDocumentRoute">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="xDocumentDefinitionID" ColumnName="xDocumentDefinitionID" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentRouteUsers">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentRouteUser">
+        <MappingFragment StoreEntitySet="XDocumentRouteUsers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="xDocumentDefinitionID" ColumnName="xDocumentDefinitionID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+          <ScalarProperty Name="storeID" ColumnName="storeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentSections">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentSection">
+        <MappingFragment StoreEntitySet="XDocumentSection">
+          <ScalarProperty Name="documentSectionID" ColumnName="documentSectionID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="pageID" ColumnName="pageID" />
+          <ScalarProperty Name="flow" ColumnName="flow" />
+          <ScalarProperty Name="documentDefinitionID" ColumnName="documentDefinitionID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="isReport" ColumnName="isReport" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentStores">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentStore">
+        <MappingFragment StoreEntitySet="XDocumentStore">
+          <ScalarProperty Name="documentStoreID" ColumnName="documentStoreID" />
+          <ScalarProperty Name="documentDefinitionID" ColumnName="documentDefinitionID" />
+          <ScalarProperty Name="storeID" ColumnName="storeID" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentTables">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentTable">
+        <MappingFragment StoreEntitySet="XDocumentTable">
+          <ScalarProperty Name="documentTableID" ColumnName="documentTableID" />
+          <ScalarProperty Name="documentSectionID" ColumnName="documentSectionID" />
+          <ScalarProperty Name="dataToggle" ColumnName="dataToggle" />
+          <ScalarProperty Name="tableControlID" ColumnName="tableControlID" />
+          <ScalarProperty Name="cssClass" ColumnName="cssClass" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentTableContents">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentTableContent">
+        <MappingFragment StoreEntitySet="XDocumentTableContent">
+          <ScalarProperty Name="documentTableContentID" ColumnName="documentTableContentID" />
+          <ScalarProperty Name="tdID" ColumnName="tdID" />
+          <ScalarProperty Name="controlType" ColumnName="controlType" />
+          <ScalarProperty Name="controlName" ColumnName="controlName" />
+          <ScalarProperty Name="controlID" ColumnName="controlID" />
+          <ScalarProperty Name="mask" ColumnName="mask" />
+          <ScalarProperty Name="isRequired" ColumnName="isRequired" />
+          <ScalarProperty Name="translation" ColumnName="translation" />
+          <ScalarProperty Name="cssClass" ColumnName="cssClass" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="lookupName" ColumnName="lookupName" />
+          <ScalarProperty Name="colspan" ColumnName="colspan" />
+          <ScalarProperty Name="defaultValue" ColumnName="defaultValue" />
+          <ScalarProperty Name="points" ColumnName="points" />
+          <ScalarProperty Name="isReadonly" ColumnName="isReadonly" />
+          <ScalarProperty Name="formula" ColumnName="formula" />
+          <ScalarProperty Name="conditions" ColumnName="conditions" />
+          <ScalarProperty Name="rows" ColumnName="rows" />
+          <ScalarProperty Name="cells" ColumnName="cells" />
+          <ScalarProperty Name="refControlID" ColumnName="refControlID" />
+          <ScalarProperty Name="rowspan" ColumnName="rowspan" />
+          <ScalarProperty Name="src" ColumnName="src" />
+          <ScalarProperty Name="labelAssociate" ColumnName="labelAssociate" />
+          <ScalarProperty Name="documentSectionID" ColumnName="documentSectionID" />
+          <ScalarProperty Name="labelSkip" ColumnName="labelSkip" />
+          <ScalarProperty Name="isReceivedFromLastSubmittedForm" ColumnName="isReceivedFromLastSubmittedForm" />
+          <ScalarProperty Name="reportFieldColspan" ColumnName="reportFieldColspan" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+          <ScalarProperty Name="reportHeadingTitle" ColumnName="reportHeadingTitle" />
+          <ScalarProperty Name="isNotes" ColumnName="isNotes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentTableTDs">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentTableTD">
+        <MappingFragment StoreEntitySet="XDocumentTableTD">
+          <ScalarProperty Name="tdID" ColumnName="tdID" />
+          <ScalarProperty Name="tdControlID" ColumnName="tdControlID" />
+          <ScalarProperty Name="trID" ColumnName="trID" />
+          <ScalarProperty Name="cssClass" ColumnName="cssClass" />
+          <ScalarProperty Name="colspan" ColumnName="colspan" />
+          <ScalarProperty Name="tdType" ColumnName="tdType" />
+          <ScalarProperty Name="pts" ColumnName="pts" />
+          <ScalarProperty Name="rowspan" ColumnName="rowspan" />
+          <ScalarProperty Name="col" ColumnName="col" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentTableTRs">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentTableTR">
+        <MappingFragment StoreEntitySet="XDocumentTableTR">
+          <ScalarProperty Name="trID" ColumnName="trID" />
+          <ScalarProperty Name="trControlID" ColumnName="trControlID" />
+          <ScalarProperty Name="cssClass" ColumnName="cssClass" />
+          <ScalarProperty Name="documentTableID" ColumnName="documentTableID" />
+          <ScalarProperty Name="row" ColumnName="row" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XDocumentUserAlerts">
+      <EntityTypeMapping TypeName="kvcModel.XDocumentUserAlert">
+        <MappingFragment StoreEntitySet="XDocumentUserAlert">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="xDocumentDefinitionID" ColumnName="xDocumentDefinitionID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+          <ScalarProperty Name="storeID" ColumnName="storeID" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+          <ScalarProperty Name="xDocumentFormFrequencyID" ColumnName="xDocumentFormFrequencyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XReportDefinitions">
+      <EntityTypeMapping TypeName="kvcModel.XReportDefinition">
+        <MappingFragment StoreEntitySet="XReportDefinition">
+          <ScalarProperty Name="xReportDefinitionID" ColumnName="xReportDefinitionID" />
+          <ScalarProperty Name="documentDefinitionID" ColumnName="documentDefinitionID" />
+          <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XReportSections">
+      <EntityTypeMapping TypeName="kvcModel.XReportSection">
+        <MappingFragment StoreEntitySet="XReportSection">
+          <ScalarProperty Name="reportSectionTableID" ColumnName="reportSectionTableID" />
+          <ScalarProperty Name="xReportDefinitionID" ColumnName="xReportDefinitionID" />
+          <ScalarProperty Name="xDocumentSectionID" ColumnName="xDocumentSectionID" />
+          <ScalarProperty Name="row" ColumnName="row" />
+          <ScalarProperty Name="cell" ColumnName="cell" />
+          <ScalarProperty Name="rowspan" ColumnName="rowspan" />
+          <ScalarProperty Name="colspan" ColumnName="colspan" />
+          <ScalarProperty Name="cssClass" ColumnName="cssClass" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XReportTables">
+      <EntityTypeMapping TypeName="kvcModel.XReportTable">
+        <MappingFragment StoreEntitySet="XReportTable">
+          <ScalarProperty Name="reportTableID" ColumnName="reportTableID" />
+          <ScalarProperty Name="xReportDefinitionID" ColumnName="xReportDefinitionID" />
+          <ScalarProperty Name="cssClass" ColumnName="cssClass" />
+          <ScalarProperty Name="reportTableHtml" ColumnName="reportTableHtml" />
+          <ScalarProperty Name="documentSectionID" ColumnName="documentSectionID" />
+          <ScalarProperty Name="parentTableID" ColumnName="parentTableID" />
+          <ScalarProperty Name="isDifferentReport" ColumnName="isDifferentReport" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XReportTableContents">
+      <EntityTypeMapping TypeName="kvcModel.XReportTableContent">
+        <MappingFragment StoreEntitySet="XReportTableContent">
+          <ScalarProperty Name="reportTableContentID" ColumnName="reportTableContentID" />
+          <ScalarProperty Name="tdID" ColumnName="tdID" />
+          <ScalarProperty Name="controlType" ColumnName="controlType" />
+          <ScalarProperty Name="controlName" ColumnName="controlName" />
+          <ScalarProperty Name="controlID" ColumnName="controlID" />
+          <ScalarProperty Name="mask" ColumnName="mask" />
+          <ScalarProperty Name="isRequired" ColumnName="isRequired" />
+          <ScalarProperty Name="translation" ColumnName="translation" />
+          <ScalarProperty Name="cssClass" ColumnName="cssClass" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="lookupName" ColumnName="lookupName" />
+          <ScalarProperty Name="colspan" ColumnName="colspan" />
+          <ScalarProperty Name="defaultValue" ColumnName="defaultValue" />
+          <ScalarProperty Name="points" ColumnName="points" />
+          <ScalarProperty Name="isReadonly" ColumnName="isReadonly" />
+          <ScalarProperty Name="formula" ColumnName="formula" />
+          <ScalarProperty Name="conditions" ColumnName="conditions" />
+          <ScalarProperty Name="rows" ColumnName="rows" />
+          <ScalarProperty Name="cells" ColumnName="cells" />
+          <ScalarProperty Name="refControlID" ColumnName="refControlID" />
+          <ScalarProperty Name="rowspan" ColumnName="rowspan" />
+          <ScalarProperty Name="src" ColumnName="src" />
+          <ScalarProperty Name="labelAssociate" ColumnName="labelAssociate" />
+          <ScalarProperty Name="documentControlID" ColumnName="documentControlID" />
+          <ScalarProperty Name="documentSectionID" ColumnName="documentSectionID" />
+          <ScalarProperty Name="labelSkip" ColumnName="labelSkip" />
+          <ScalarProperty Name="isReceivedFromLastSubmittedForm" ColumnName="isReceivedFromLastSubmittedForm" />
+          <ScalarProperty Name="reportFieldColspan" ColumnName="reportFieldColspan" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+          <ScalarProperty Name="reportHeadingTitle" ColumnName="reportHeadingTitle" />
+          <ScalarProperty Name="isNotes" ColumnName="isNotes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XReportTableTDs">
+      <EntityTypeMapping TypeName="kvcModel.XReportTableTD">
+        <MappingFragment StoreEntitySet="XReportTableTD">
+          <ScalarProperty Name="reportTdID" ColumnName="reportTdID" />
+          <ScalarProperty Name="reportTrID" ColumnName="reportTrID" />
+          <ScalarProperty Name="tdControlID" ColumnName="tdControlID" />
+          <ScalarProperty Name="cssClass" ColumnName="cssClass" />
+          <ScalarProperty Name="tdType" ColumnName="tdType" />
+          <ScalarProperty Name="colspan" ColumnName="colspan" />
+          <ScalarProperty Name="rowspan" ColumnName="rowspan" />
+          <ScalarProperty Name="col" ColumnName="col" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XReportTableTRs">
+      <EntityTypeMapping TypeName="kvcModel.XReportTableTR">
+        <MappingFragment StoreEntitySet="XReportTableTR">
+          <ScalarProperty Name="reportTrID" ColumnName="reportTrID" />
+          <ScalarProperty Name="trControlID" ColumnName="trControlID" />
+          <ScalarProperty Name="cssClass" ColumnName="cssClass" />
+          <ScalarProperty Name="reportTableID" ColumnName="reportTableID" />
+          <ScalarProperty Name="row" ColumnName="row" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XTaskDefinitions">
+      <EntityTypeMapping TypeName="kvcModel.XTaskDefinition">
+        <MappingFragment StoreEntitySet="XTaskDefinition">
+          <ScalarProperty Name="xTaskDefinitionID" ColumnName="xTaskDefinitionID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="openService" ColumnName="openService" />
+          <ScalarProperty Name="completeService" ColumnName="completeService" />
+          <ScalarProperty Name="parameters" ColumnName="parameters" />
+          <ScalarProperty Name="dueDays" ColumnName="dueDays" />
+          <ScalarProperty Name="deadLineDays" ColumnName="deadLineDays" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="route" ColumnName="route" />
+          <ScalarProperty Name="initiateAuditEvent" ColumnName="initiateAuditEvent" />
+          <ScalarProperty Name="inprogressAuditEvent" ColumnName="inprogressAuditEvent" />
+          <ScalarProperty Name="completeAuditEvent" ColumnName="completeAuditEvent" />
+          <ScalarProperty Name="transID" ColumnName="transID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

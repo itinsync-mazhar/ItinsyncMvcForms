@@ -1,0 +1,9 @@
+D:\Intinsync.MvcForms\Itinsync.NonBusinessModel\bin\Debug\Itinsync.NonBusinessModel.dll.config
+D:\Intinsync.MvcForms\Itinsync.NonBusinessModel\bin\Debug\Itinsync.NonBusinessModel.dll
+D:\Intinsync.MvcForms\Itinsync.NonBusinessModel\bin\Debug\Itinsync.NonBusinessModel.pdb
+D:\Intinsync.MvcForms\Itinsync.NonBusinessModel\bin\Debug\EntityFramework.dll
+D:\Intinsync.MvcForms\Itinsync.NonBusinessModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\Intinsync.MvcForms\Itinsync.NonBusinessModel\bin\Debug\EntityFramework.xml
+D:\Intinsync.MvcForms\Itinsync.NonBusinessModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\Intinsync.MvcForms\Itinsync.NonBusinessModel\obj\Debug\Itinsync.NonBusinessModel.dll
+D:\Intinsync.MvcForms\Itinsync.NonBusinessModel\obj\Debug\Itinsync.NonBusinessModel.pdb

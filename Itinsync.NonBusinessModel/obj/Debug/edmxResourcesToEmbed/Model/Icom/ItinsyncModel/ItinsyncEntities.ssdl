@@ -1,0 +1,762 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ItinsyncModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Audit">
+    <Key>
+      <PropertyRef Name="auditID" />
+    </Key>
+    <Property Name="auditID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="eventCode" Type="int" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+    <Property Name="additionalDetails" Type="varchar" MaxLength="200" />
+    <Property Name="userID" Type="int" />
+    <Property Name="transDateTime" Type="datetime" />
+    <Property Name="parentRef" Type="varchar" MaxLength="200" />
+    <Property Name="userName" Type="varchar" MaxLength="50" />
+    <Property Name="vendorID" Type="int" />
+    <Property Name="transID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="BatchManagement">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobName" Type="varchar" MaxLength="100" />
+    <Property Name="IntervalTime" Type="time" Precision="7" />
+    <Property Name="Repeatable" Type="bit" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="BusinessTransaction">
+    <Key>
+      <PropertyRef Name="transID" />
+    </Key>
+    <Property Name="transID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="transDateTime" Type="datetime" />
+    <Property Name="userID" Type="int" />
+    <Property Name="pageNo" Type="int" />
+    <Property Name="previousPageNo" Type="int" />
+  </EntityType>
+  <EntityType Name="EmailConfig">
+    <Key>
+      <PropertyRef Name="emailConfigID" />
+    </Key>
+    <Property Name="emailConfigID" Type="int" Nullable="false" />
+    <Property Name="hostName" Type="varchar" MaxLength="100" />
+    <Property Name="portNo" Type="int" />
+    <Property Name="userEmail" Type="varchar" MaxLength="100" />
+    <Property Name="password" Type="varchar" MaxLength="100" />
+    <Property Name="fromAddress" Type="varchar" MaxLength="100" />
+    <Property Name="enableSSL" Type="tinyint" />
+    <Property Name="transID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Lookup">
+    <Key>
+      <PropertyRef Name="lookUpID" />
+    </Key>
+    <Property Name="lookUpID" Type="bigint" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="30" />
+    <Property Name="code" Type="varchar" MaxLength="50" />
+    <Property Name="text" Type="varchar" MaxLength="200" />
+    <Property Name="fr" Type="varchar" MaxLength="200" />
+    <Property Name="sp" Type="varchar" MaxLength="200" />
+    <Property Name="ud" Type="varchar" MaxLength="200" />
+    <Property Name="transID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="LookupTrans">
+    <Key>
+      <PropertyRef Name="lookupTransID" />
+    </Key>
+    <Property Name="lookupTransID" Type="bigint" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="5000" />
+    <Property Name="value" Type="varchar" MaxLength="5000" />
+    <Property Name="lang" Type="char" MaxLength="5" />
+    <Property Name="transID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="PageName">
+    <Key>
+      <PropertyRef Name="pageID" />
+    </Key>
+    <Property Name="pageID" Type="int" Nullable="false" />
+    <Property Name="pageName" Type="varchar" MaxLength="50" />
+    <Property Name="webName" Type="varchar" MaxLength="300" />
+    <Property Name="transID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="permissionID" />
+    </Key>
+    <Property Name="permissionID" Type="int" Nullable="false" />
+    <Property Name="code" Type="int" />
+    <Property Name="text" Type="varchar" MaxLength="100" />
+    <Property Name="pageID" Type="int" />
+    <Property Name="transID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="teamID" />
+    </Key>
+    <Property Name="teamID" Type="int" Nullable="false" />
+    <Property Name="teamName" Type="varchar" MaxLength="100" />
+    <Property Name="status" Type="bit" />
+    <Property Name="vendorID" Type="int" />
+    <Property Name="transID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="UserAccounts">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="200" />
+    <Property Name="role" Type="int" />
+    <Property Name="loginCount" Type="int" />
+    <Property Name="firstName" Type="varchar" MaxLength="50" />
+    <Property Name="lastName" Type="varchar" MaxLength="50" />
+    <Property Name="lastLogin" Type="int" />
+    <Property Name="isLock" Type="bit" />
+    <Property Name="userPhone" Type="varchar" MaxLength="25" />
+    <Property Name="userEmail" Type="varchar" MaxLength="25" />
+    <Property Name="transID" Type="bigint" Nullable="false" />
+    <Property Name="lang" Type="char" MaxLength="2" />
+    <Property Name="timeZone" Type="varchar" MaxLength="50" />
+    <Property Name="countryCode" Type="char" MaxLength="5" />
+    <Property Name="vendorID" Type="int" />
+    <Property Name="mobileProvider" Type="int" />
+    <Property Name="status" Type="int" />
+    <Property Name="roleID" Type="int" />
+  </EntityType>
+  <EntityType Name="UserPermission">
+    <Key>
+      <PropertyRef Name="userPermissionID" />
+    </Key>
+    <Property Name="userPermissionID" Type="int" Nullable="false" />
+    <Property Name="code" Type="int" Nullable="false" />
+    <Property Name="userID" Type="int" Nullable="false" />
+    <Property Name="transID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserPermissionProfile">
+    <Key>
+      <PropertyRef Name="userPermissionProfileID" />
+    </Key>
+    <Property Name="userPermissionProfileID" Type="int" Nullable="false" />
+    <Property Name="permissionProfileID" Type="int" />
+    <Property Name="userID" Type="int" />
+    <Property Name="transID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="userRoleID" />
+    </Key>
+    <Property Name="userRoleID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userID" Type="bigint" />
+    <Property Name="role" Type="bigint" />
+    <Property Name="transID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="UserStore">
+    <Key>
+      <PropertyRef Name="userStoreID" />
+    </Key>
+    <Property Name="userStoreID" Type="int" Nullable="false" />
+    <Property Name="userID" Type="int" />
+    <Property Name="storeID" Type="int" />
+    <Property Name="transID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="UserTeam">
+    <Key>
+      <PropertyRef Name="userTeamID" />
+    </Key>
+    <Property Name="userTeamID" Type="int" Nullable="false" />
+    <Property Name="userID" Type="int" />
+    <Property Name="teamID" Type="int" />
+    <Property Name="transID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="vendorID" />
+    </Key>
+    <Property Name="vendorID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="primaryRole" Type="int" />
+    <Property Name="contactPerson" Type="varchar" MaxLength="50" />
+    <Property Name="additionalService" Type="varchar" MaxLength="100" />
+    <Property Name="activeFrom" Type="int" />
+    <Property Name="activeTo" Type="int" />
+    <Property Name="transDateTime" Type="datetime" />
+    <Property Name="transID" Type="bigint" />
+    <Property Name="pFix" Type="varchar" MaxLength="100" />
+    <Property Name="ranking" Type="varchar" MaxLength="100" />
+    <Property Name="refNo" Type="varchar" MaxLength="100" />
+    <Property Name="status" Type="tinyint" />
+    <Property Name="contactMethod" Type="tinyint" />
+    <Property Name="vat" Type="int" />
+    <Property Name="tax" Type="int" />
+    <Property Name="preferredLanguage" Type="char" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="vendordevice">
+    <Key>
+      <PropertyRef Name="deviceID" />
+    </Key>
+    <Property Name="deviceID" Type="int" Nullable="false" />
+    <Property Name="deviceName" Type="varchar" MaxLength="200" />
+    <Property Name="osVersion" Type="varchar" MaxLength="100" />
+    <Property Name="accessToken" Type="varchar" MaxLength="200" />
+    <Property Name="vendorID" Type="int" />
+    <Property Name="transDateTime" Type="datetime" />
+    <Property Name="status" Type="bit" />
+    <Property Name="userID" Type="int" />
+    <Property Name="cacheCount" Type="int" />
+    <Property Name="transID" Type="bigint" />
+  </EntityType>
+  <Association Name="FK_audit_businesstransaction">
+    <End Role="BusinessTransaction" Type="Self.BusinessTransaction" Multiplicity="0..1" />
+    <End Role="Audit" Type="Self.Audit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessTransaction">
+        <PropertyRef Name="transID" />
+      </Principal>
+      <Dependent Role="Audit">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_audit_useraccounts">
+    <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="0..1" />
+    <End Role="Audit" Type="Self.Audit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccounts">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="Audit">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_audit_vendor">
+    <End Role="Vendor" Type="Self.Vendor" Multiplicity="0..1" />
+    <End Role="Audit" Type="Self.Audit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendor">
+        <PropertyRef Name="vendorID" />
+      </Principal>
+      <Dependent Role="Audit">
+        <PropertyRef Name="vendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_emailconfig_businesstransaction">
+    <End Role="BusinessTransaction" Type="Self.BusinessTransaction" Multiplicity="0..1" />
+    <End Role="EmailConfig" Type="Self.EmailConfig" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessTransaction">
+        <PropertyRef Name="transID" />
+      </Principal>
+      <Dependent Role="EmailConfig">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pagename_businesstransaction">
+    <End Role="BusinessTransaction" Type="Self.BusinessTransaction" Multiplicity="0..1" />
+    <End Role="PageName" Type="Self.PageName" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessTransaction">
+        <PropertyRef Name="transID" />
+      </Principal>
+      <Dependent Role="PageName">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_permission_businesstransaction">
+    <End Role="BusinessTransaction" Type="Self.BusinessTransaction" Multiplicity="0..1" />
+    <End Role="Permission" Type="Self.Permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessTransaction">
+        <PropertyRef Name="transID" />
+      </Principal>
+      <Dependent Role="Permission">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_permission_pagename">
+    <End Role="PageName" Type="Self.PageName" Multiplicity="0..1" />
+    <End Role="Permission" Type="Self.Permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PageName">
+        <PropertyRef Name="pageID" />
+      </Principal>
+      <Dependent Role="Permission">
+        <PropertyRef Name="pageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Team_BusinessTransaction">
+    <End Role="BusinessTransaction" Type="Self.BusinessTransaction" Multiplicity="0..1" />
+    <End Role="Team" Type="Self.Team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessTransaction">
+        <PropertyRef Name="transID" />
+      </Principal>
+      <Dependent Role="Team">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Team_Vendor">
+    <End Role="Vendor" Type="Self.Vendor" Multiplicity="0..1" />
+    <End Role="Team" Type="Self.Team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendor">
+        <PropertyRef Name="vendorID" />
+      </Principal>
+      <Dependent Role="Team">
+        <PropertyRef Name="vendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserAccounts_BusinessTransaction">
+    <End Role="BusinessTransaction" Type="Self.BusinessTransaction" Multiplicity="1" />
+    <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessTransaction">
+        <PropertyRef Name="transID" />
+      </Principal>
+      <Dependent Role="UserAccounts">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserAccounts_Vendor">
+    <End Role="Vendor" Type="Self.Vendor" Multiplicity="0..1" />
+    <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendor">
+        <PropertyRef Name="vendorID" />
+      </Principal>
+      <Dependent Role="UserAccounts">
+        <PropertyRef Name="vendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPermission_BusinessTransaction">
+    <End Role="BusinessTransaction" Type="Self.BusinessTransaction" Multiplicity="1" />
+    <End Role="UserPermission" Type="Self.UserPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessTransaction">
+        <PropertyRef Name="transID" />
+      </Principal>
+      <Dependent Role="UserPermission">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPermission_UserAccounts">
+    <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="1" />
+    <End Role="UserPermission" Type="Self.UserPermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccounts">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="UserPermission">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPermissionProfile_BusinessTransaction">
+    <End Role="BusinessTransaction" Type="Self.BusinessTransaction" Multiplicity="0..1" />
+    <End Role="UserPermissionProfile" Type="Self.UserPermissionProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessTransaction">
+        <PropertyRef Name="transID" />
+      </Principal>
+      <Dependent Role="UserPermissionProfile">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPermissionProfile_UserAccounts">
+    <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="0..1" />
+    <End Role="UserPermissionProfile" Type="Self.UserPermissionProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccounts">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="UserPermissionProfile">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserStore_BusinessTransaction">
+    <End Role="BusinessTransaction" Type="Self.BusinessTransaction" Multiplicity="0..1" />
+    <End Role="UserStore" Type="Self.UserStore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessTransaction">
+        <PropertyRef Name="transID" />
+      </Principal>
+      <Dependent Role="UserStore">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserStore_UserAccounts">
+    <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="0..1" />
+    <End Role="UserStore" Type="Self.UserStore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccounts">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="UserStore">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserTeam_BusinessTransaction">
+    <End Role="BusinessTransaction" Type="Self.BusinessTransaction" Multiplicity="0..1" />
+    <End Role="UserTeam" Type="Self.UserTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessTransaction">
+        <PropertyRef Name="transID" />
+      </Principal>
+      <Dependent Role="UserTeam">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserTeam_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="UserTeam" Type="Self.UserTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="teamID" />
+      </Principal>
+      <Dependent Role="UserTeam">
+        <PropertyRef Name="teamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserTeam_UserAccounts">
+    <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="0..1" />
+    <End Role="UserTeam" Type="Self.UserTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccounts">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="UserTeam">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vendor_BusinessTransaction">
+    <End Role="BusinessTransaction" Type="Self.BusinessTransaction" Multiplicity="0..1" />
+    <End Role="Vendor" Type="Self.Vendor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessTransaction">
+        <PropertyRef Name="transID" />
+      </Principal>
+      <Dependent Role="Vendor">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_vendordevice_BusinessTransaction">
+    <End Role="BusinessTransaction" Type="Self.BusinessTransaction" Multiplicity="0..1" />
+    <End Role="vendordevice" Type="Self.vendordevice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessTransaction">
+        <PropertyRef Name="transID" />
+      </Principal>
+      <Dependent Role="vendordevice">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_vendordevice_UserAccounts">
+    <End Role="UserAccounts" Type="Self.UserAccounts" Multiplicity="0..1" />
+    <End Role="vendordevice" Type="Self.vendordevice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccounts">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="vendordevice">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_vendordevice_Vendor">
+    <End Role="Vendor" Type="Self.Vendor" Multiplicity="0..1" />
+    <End Role="vendordevice" Type="Self.vendordevice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendor">
+        <PropertyRef Name="vendorID" />
+      </Principal>
+      <Dependent Role="vendordevice">
+        <PropertyRef Name="vendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ItinsyncModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Audit" EntityType="Self.Audit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BatchManagement" EntityType="Self.BatchManagement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BusinessTransaction" EntityType="Self.BusinessTransaction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailConfig" EntityType="Self.EmailConfig" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lookup" EntityType="Self.Lookup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LookupTrans" EntityType="Self.LookupTrans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageName" EntityType="Self.PageName" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permission" EntityType="Self.Permission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAccounts" EntityType="Self.UserAccounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserPermission" EntityType="Self.UserPermission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserPermissionProfile" EntityType="Self.UserPermissionProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserStore" EntityType="Self.UserStore" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserTeam" EntityType="Self.UserTeam" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vendor" EntityType="Self.Vendor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vendordevice" EntityType="Self.vendordevice" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_audit_businesstransaction" Association="Self.FK_audit_businesstransaction">
+      <End Role="BusinessTransaction" EntitySet="BusinessTransaction" />
+      <End Role="Audit" EntitySet="Audit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_audit_useraccounts" Association="Self.FK_audit_useraccounts">
+      <End Role="UserAccounts" EntitySet="UserAccounts" />
+      <End Role="Audit" EntitySet="Audit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_audit_vendor" Association="Self.FK_audit_vendor">
+      <End Role="Vendor" EntitySet="Vendor" />
+      <End Role="Audit" EntitySet="Audit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_emailconfig_businesstransaction" Association="Self.FK_emailconfig_businesstransaction">
+      <End Role="BusinessTransaction" EntitySet="BusinessTransaction" />
+      <End Role="EmailConfig" EntitySet="EmailConfig" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pagename_businesstransaction" Association="Self.FK_pagename_businesstransaction">
+      <End Role="BusinessTransaction" EntitySet="BusinessTransaction" />
+      <End Role="PageName" EntitySet="PageName" />
+    </AssociationSet>
+    <AssociationSet Name="FK_permission_businesstransaction" Association="Self.FK_permission_businesstransaction">
+      <End Role="BusinessTransaction" EntitySet="BusinessTransaction" />
+      <End Role="Permission" EntitySet="Permission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_permission_pagename" Association="Self.FK_permission_pagename">
+      <End Role="PageName" EntitySet="PageName" />
+      <End Role="Permission" EntitySet="Permission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Team_BusinessTransaction" Association="Self.FK_Team_BusinessTransaction">
+      <End Role="BusinessTransaction" EntitySet="BusinessTransaction" />
+      <End Role="Team" EntitySet="Team" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Team_Vendor" Association="Self.FK_Team_Vendor">
+      <End Role="Vendor" EntitySet="Vendor" />
+      <End Role="Team" EntitySet="Team" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserAccounts_BusinessTransaction" Association="Self.FK_UserAccounts_BusinessTransaction">
+      <End Role="BusinessTransaction" EntitySet="BusinessTransaction" />
+      <End Role="UserAccounts" EntitySet="UserAccounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserAccounts_Vendor" Association="Self.FK_UserAccounts_Vendor">
+      <End Role="Vendor" EntitySet="Vendor" />
+      <End Role="UserAccounts" EntitySet="UserAccounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermission_BusinessTransaction" Association="Self.FK_UserPermission_BusinessTransaction">
+      <End Role="BusinessTransaction" EntitySet="BusinessTransaction" />
+      <End Role="UserPermission" EntitySet="UserPermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermission_UserAccounts" Association="Self.FK_UserPermission_UserAccounts">
+      <End Role="UserAccounts" EntitySet="UserAccounts" />
+      <End Role="UserPermission" EntitySet="UserPermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermissionProfile_BusinessTransaction" Association="Self.FK_UserPermissionProfile_BusinessTransaction">
+      <End Role="BusinessTransaction" EntitySet="BusinessTransaction" />
+      <End Role="UserPermissionProfile" EntitySet="UserPermissionProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPermissionProfile_UserAccounts" Association="Self.FK_UserPermissionProfile_UserAccounts">
+      <End Role="UserAccounts" EntitySet="UserAccounts" />
+      <End Role="UserPermissionProfile" EntitySet="UserPermissionProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserStore_BusinessTransaction" Association="Self.FK_UserStore_BusinessTransaction">
+      <End Role="BusinessTransaction" EntitySet="BusinessTransaction" />
+      <End Role="UserStore" EntitySet="UserStore" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserStore_UserAccounts" Association="Self.FK_UserStore_UserAccounts">
+      <End Role="UserAccounts" EntitySet="UserAccounts" />
+      <End Role="UserStore" EntitySet="UserStore" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserTeam_BusinessTransaction" Association="Self.FK_UserTeam_BusinessTransaction">
+      <End Role="BusinessTransaction" EntitySet="BusinessTransaction" />
+      <End Role="UserTeam" EntitySet="UserTeam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserTeam_Team" Association="Self.FK_UserTeam_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="UserTeam" EntitySet="UserTeam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserTeam_UserAccounts" Association="Self.FK_UserTeam_UserAccounts">
+      <End Role="UserAccounts" EntitySet="UserAccounts" />
+      <End Role="UserTeam" EntitySet="UserTeam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vendor_BusinessTransaction" Association="Self.FK_Vendor_BusinessTransaction">
+      <End Role="BusinessTransaction" EntitySet="BusinessTransaction" />
+      <End Role="Vendor" EntitySet="Vendor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_vendordevice_BusinessTransaction" Association="Self.FK_vendordevice_BusinessTransaction">
+      <End Role="BusinessTransaction" EntitySet="BusinessTransaction" />
+      <End Role="vendordevice" EntitySet="vendordevice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_vendordevice_UserAccounts" Association="Self.FK_vendordevice_UserAccounts">
+      <End Role="UserAccounts" EntitySet="UserAccounts" />
+      <End Role="vendordevice" EntitySet="vendordevice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_vendordevice_Vendor" Association="Self.FK_vendordevice_Vendor">
+      <End Role="Vendor" EntitySet="Vendor" />
+      <End Role="vendordevice" EntitySet="vendordevice" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

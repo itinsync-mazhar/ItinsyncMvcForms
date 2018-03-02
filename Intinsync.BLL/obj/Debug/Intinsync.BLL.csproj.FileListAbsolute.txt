@@ -1,0 +1,4 @@
+D:\Intinsync.MvcForms\Intinsync.BLL\bin\Debug\Intinsync.BLL.dll
+D:\Intinsync.MvcForms\Intinsync.BLL\bin\Debug\Intinsync.BLL.pdb
+D:\Intinsync.MvcForms\Intinsync.BLL\obj\Debug\Intinsync.BLL.dll
+D:\Intinsync.MvcForms\Intinsync.BLL\obj\Debug\Intinsync.BLL.pdb

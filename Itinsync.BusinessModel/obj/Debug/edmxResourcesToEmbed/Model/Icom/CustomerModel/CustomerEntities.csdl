@@ -1,0 +1,1699 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kvcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ApplicationCode">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="DOMAINHOST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BASE_LOCATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRODUCTION_MODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CACHECOUNT" Type="Int64" />
+    <Property Name="transID" Type="Int64" />
+    <Property Name="companyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CrossTable_businesstransaction">
+    <Key>
+      <PropertyRef Name="TransID" />
+    </Key>
+    <Property Name="TransID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Documents" Relationship="Self.FK_Document_XDocuments_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="Document" />
+    <NavigationProperty Name="DocumentAlerts" Relationship="Self.FK_DocumentAlert_XDocuments_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="DocumentAlert" />
+    <NavigationProperty Name="Stores" Relationship="Self.FK_Stores_XDocuments_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="Stores" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_XDocuments_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="Task" />
+    <NavigationProperty Name="XDocumentDefinitions" Relationship="Self.FK_XDocumentDefinition_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XDocumentDefinition" />
+    <NavigationProperty Name="XDocumentReferedContents" Relationship="Self.FK_XDocumentReferedContent_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XDocumentReferedContent" />
+    <NavigationProperty Name="XDocumentRoles" Relationship="Self.FK_XDocumentRole_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XDocumentRole" />
+    <NavigationProperty Name="XDocumentRoleAlerts" Relationship="Self.FK_XDocumentRoleAlert_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XDocumentRoleAlert" />
+    <NavigationProperty Name="XDocumentRoleRoutes" Relationship="Self.FK_XDocumentRoleRoute_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XDocumentRoleRoute" />
+    <NavigationProperty Name="XDocumentRoutes" Relationship="Self.FK_XDocumentRoute_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XDocumentRoute" />
+    <NavigationProperty Name="XDocumentRouteUsers" Relationship="Self.FK_XDocumentRouteUsers_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XDocumentRouteUsers" />
+    <NavigationProperty Name="XDocumentSections" Relationship="Self.FK_XDocumentSection_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XDocumentSection" />
+    <NavigationProperty Name="XDocumentStores" Relationship="Self.FK_XDocumentStore_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XDocumentStore" />
+    <NavigationProperty Name="XDocumentTables" Relationship="Self.FK_XDocumentTable_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XDocumentTable" />
+    <NavigationProperty Name="XDocumentTableContents" Relationship="Self.FK_XDocumentTableContent_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XDocumentTableContent" />
+    <NavigationProperty Name="XDocumentTableTDs" Relationship="Self.FK_XDocumentTableTD_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XDocumentTableTD" />
+    <NavigationProperty Name="XDocumentTableTRs" Relationship="Self.FK_XDocumentTableTR_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XDocumentTableTR" />
+    <NavigationProperty Name="XDocumentUserAlerts" Relationship="Self.FK_XDocumentUserAlert_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XDocumentUserAlert" />
+    <NavigationProperty Name="XReportDefinitions" Relationship="Self.FK_XReportDefinition_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XReportDefinition" />
+    <NavigationProperty Name="XReportSections" Relationship="Self.FK_XReportSection_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XReportSection" />
+    <NavigationProperty Name="XReportTables" Relationship="Self.FK_XReportTable_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XReportTable" />
+    <NavigationProperty Name="XReportTableContents" Relationship="Self.FK_XReportTableContent_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XReportTableContent" />
+    <NavigationProperty Name="XReportTableTDs" Relationship="Self.FK_XReportTableTD_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XReportTableTD" />
+    <NavigationProperty Name="XReportTableTRs" Relationship="Self.FK_XReportTableTR_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XReportTableTR" />
+    <NavigationProperty Name="XTaskDefinitions" Relationship="Self.FK_XTaskDefinition_CrossTable_businesstransaction" FromRole="CrossTable_businesstransaction" ToRole="XTaskDefinition" />
+  </EntityType>
+  <EntityType Name="CrossTable_pagename">
+    <Key>
+      <PropertyRef Name="pageID" />
+    </Key>
+    <Property Name="pageID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="XDocumentSections" Relationship="Self.FK_XDocumentSection_CrossTable_pagename" FromRole="CrossTable_pagename" ToRole="XDocumentSection" />
+    <NavigationProperty Name="XDocumentSections1" Relationship="Self.FK_XDocumentSection_CrossTable_pagename1" FromRole="CrossTable_pagename" ToRole="XDocumentSection" />
+  </EntityType>
+  <EntityType Name="CrossTable_vendor">
+    <Key>
+      <PropertyRef Name="vendorID" />
+    </Key>
+    <Property Name="vendorID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Documents" Relationship="Self.FK_Document_XDocument_Vendor" FromRole="CrossTable_vendor" ToRole="Document" />
+    <NavigationProperty Name="Stores" Relationship="Self.FK_Stores_XDocuments_vendor" FromRole="CrossTable_vendor" ToRole="Stores" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_XDocuments_vendor" FromRole="CrossTable_vendor" ToRole="Task" />
+    <NavigationProperty Name="XDocumentDefinitions" Relationship="Self.FK_XDocumentDefinition_CrossTable_vendor" FromRole="CrossTable_vendor" ToRole="XDocumentDefinition" />
+    <NavigationProperty Name="XReportDefinitions" Relationship="Self.FK_XReportDefinition_CrossTable_vendor" FromRole="CrossTable_vendor" ToRole="XReportDefinition" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="documentID" />
+    </Key>
+    <Property Name="documentID" Type="Int32" Nullable="false" />
+    <Property Name="documentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="documentDefinitionID" Type="Int32" />
+    <Property Name="transDate" Type="Int32" />
+    <Property Name="transTime" Type="Int32" />
+    <Property Name="status" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="extension" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="paramsXML" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="userID" Type="Int32" />
+    <Property Name="filePath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="vendorID" Type="Int32" />
+    <Property Name="storeID" Type="Int32" />
+    <Property Name="flow" Type="Int32" />
+    <Property Name="latitude" Type="Double" />
+    <Property Name="longitude" Type="Double" />
+    <Property Name="parentRef" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="transID" Type="Int64" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="startDateTime" Type="DateTime" Precision="3" />
+    <Property Name="frequencyID" Type="Int32" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_Document_XDocuments_businesstransaction" FromRole="Document" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="CrossTable_vendor" Relationship="Self.FK_Document_XDocument_Vendor" FromRole="Document" ToRole="CrossTable_vendor" />
+    <NavigationProperty Name="Document1" Relationship="Self.FK_Document_Document" FromRole="Document" ToRole="Document1" />
+    <NavigationProperty Name="Document2" Relationship="Self.FK_Document_Document" FromRole="Document1" ToRole="Document" />
+    <NavigationProperty Name="Store" Relationship="Self.FK_document_stores" FromRole="Document" ToRole="Stores" />
+    <NavigationProperty Name="XDocumentDefinition" Relationship="Self.FK_document_xdocumentdefinition" FromRole="Document" ToRole="XDocumentDefinition" />
+    <NavigationProperty Name="XDocumentFrequency" Relationship="Self.FK_document_xdocumentfrequency" FromRole="Document" ToRole="XDocumentFrequency" />
+  </EntityType>
+  <EntityType Name="DocumentAlert">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="frequencyID" Type="Int32" />
+    <Property Name="transID" Type="Int64" />
+    <Property Name="transDateTime" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_DocumentAlert_XDocuments_businesstransaction" FromRole="DocumentAlert" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XDocumentFrequency" Relationship="Self.FK_documentalert_xdocumentfrequency" FromRole="DocumentAlert" ToRole="XDocumentFrequency" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="storeID" />
+    </Key>
+    <Property Name="storeID" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zipCode" Type="Int32" />
+    <Property Name="website" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="storeLink" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Comments" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Walmart" Type="Boolean" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="storeNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="vendorID" Type="Int32" />
+    <Property Name="transID" Type="Int64" />
+    <Property Name="state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="storeEmail" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_Stores_XDocuments_businesstransaction" FromRole="Stores" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="CrossTable_vendor" Relationship="Self.FK_Stores_XDocuments_vendor" FromRole="Stores" ToRole="CrossTable_vendor" />
+    <NavigationProperty Name="Documents" Relationship="Self.FK_document_stores" FromRole="Stores" ToRole="Document" />
+    <NavigationProperty Name="XDocumentFrequencies" Relationship="Self.FK_XDocumentFrequency_Stores" FromRole="Stores" ToRole="XDocumentFrequency" />
+    <NavigationProperty Name="XDocumentRouteUsers" Relationship="Self.FK_XDocumentRouteUsers_Stores" FromRole="Stores" ToRole="XDocumentRouteUsers" />
+    <NavigationProperty Name="XDocumentStores" Relationship="Self.FK_XDocumentStore_Stores" FromRole="Stores" ToRole="XDocumentStore" />
+    <NavigationProperty Name="XDocumentUserAlerts" Relationship="Self.FK_XDocumentUserAlert_Stores" FromRole="Stores" ToRole="XDocumentUserAlert" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="taskID" />
+    </Key>
+    <Property Name="taskID" Type="Int32" Nullable="false" />
+    <Property Name="body" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="transID" Type="Int64" />
+    <Property Name="transDateTime" Type="DateTime" Precision="3" />
+    <Property Name="dueDate" Type="Int32" />
+    <Property Name="deadLineDate" Type="DateTime" Precision="0" />
+    <Property Name="taskDefinitionID" Type="Int32" />
+    <Property Name="subjectID" Type="Int32" />
+    <Property Name="teamID" Type="Int32" />
+    <Property Name="status" Type="Byte" />
+    <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="parentRef" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="userID" Type="Int32" />
+    <Property Name="vendorID" Type="Int32" />
+    <Property Name="dueTime" Type="Int32" />
+    <Property Name="deadLineTime" Type="Int32" />
+    <Property Name="priority" Type="Byte" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_Task_XDocuments_businesstransaction" FromRole="Task" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="CrossTable_vendor" Relationship="Self.FK_Task_XDocuments_vendor" FromRole="Task" ToRole="CrossTable_vendor" />
+    <NavigationProperty Name="XTaskDefinition" Relationship="Self.FK_Task_XTaskDefinition" FromRole="Task" ToRole="XTaskDefinition" />
+  </EntityType>
+  <EntityType Name="XDocumentDefinition">
+    <Key>
+      <PropertyRef Name="xDocumentDefinationID" />
+    </Key>
+    <Property Name="xDocumentDefinationID" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="rdlcPath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dataTable" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="parameters" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="vendorID" Type="Int32" />
+    <Property Name="storage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="transID" Type="Int64" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="sequential" Type="Boolean" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XDocumentDefinition_CrossTable_businesstransaction" FromRole="XDocumentDefinition" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="CrossTable_vendor" Relationship="Self.FK_XDocumentDefinition_CrossTable_vendor" FromRole="XDocumentDefinition" ToRole="CrossTable_vendor" />
+    <NavigationProperty Name="Documents" Relationship="Self.FK_document_xdocumentdefinition" FromRole="XDocumentDefinition" ToRole="Document" />
+    <NavigationProperty Name="XDocumentFrequencies" Relationship="Self.FK_XDocumentFrequency_XDocumentDefinition" FromRole="XDocumentDefinition" ToRole="XDocumentFrequency" />
+    <NavigationProperty Name="XDocumentReferedContents" Relationship="Self.FK_XDocumentReferedContent_XDocumentDefinition" FromRole="XDocumentDefinition" ToRole="XDocumentReferedContent" />
+    <NavigationProperty Name="XDocumentRoles" Relationship="Self.FK_XDocumentRole_XDocumentDefinition" FromRole="XDocumentDefinition" ToRole="XDocumentRole" />
+    <NavigationProperty Name="XDocumentRoleAlerts" Relationship="Self.FK_XDocumentRoleAlert_XDocumentDefinition" FromRole="XDocumentDefinition" ToRole="XDocumentRoleAlert" />
+    <NavigationProperty Name="XDocumentRoleRoutes" Relationship="Self.FK_XDocumentRoleRoute_XDocumentDefinition" FromRole="XDocumentDefinition" ToRole="XDocumentRoleRoute" />
+    <NavigationProperty Name="XDocumentRoutes" Relationship="Self.FK_XDocumentRoute_XDocumentDefinition" FromRole="XDocumentDefinition" ToRole="XDocumentRoute" />
+    <NavigationProperty Name="XDocumentRouteUsers" Relationship="Self.FK_XDocumentRouteUsers_XDocumentDefinition" FromRole="XDocumentDefinition" ToRole="XDocumentRouteUsers" />
+    <NavigationProperty Name="XDocumentSections" Relationship="Self.FK_XDocumentSection_XDocumentDefinition" FromRole="XDocumentDefinition" ToRole="XDocumentSection" />
+    <NavigationProperty Name="XDocumentStores" Relationship="Self.FK_XDocumentStore_XDocumentDefinition" FromRole="XDocumentDefinition" ToRole="XDocumentStore" />
+    <NavigationProperty Name="XDocumentUserAlerts" Relationship="Self.FK_XDocumentUserAlert_XDocumentDefinition" FromRole="XDocumentDefinition" ToRole="XDocumentUserAlert" />
+    <NavigationProperty Name="XReportDefinitions" Relationship="Self.FK_XReportDefinition_XDocumentDefinition" FromRole="XDocumentDefinition" ToRole="XReportDefinition" />
+  </EntityType>
+  <EntityType Name="XDocumentFrequency">
+    <Key>
+      <PropertyRef Name="xDocumentFormFrequencyID" />
+    </Key>
+    <Property Name="xDocumentFormFrequencyID" Type="Int32" Nullable="false" />
+    <Property Name="storeID" Type="Int32" />
+    <Property Name="formType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="startTimeTime" Type="DateTime" Precision="3" />
+    <Property Name="xDocumentDefinitionID" Type="Int32" />
+    <Property Name="day" Type="Byte" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="repeatFrequency" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="parentFrequencyId" Type="Int32" />
+    <NavigationProperty Name="Documents" Relationship="Self.FK_document_xdocumentfrequency" FromRole="XDocumentFrequency" ToRole="Document" />
+    <NavigationProperty Name="DocumentAlerts" Relationship="Self.FK_documentalert_xdocumentfrequency" FromRole="XDocumentFrequency" ToRole="DocumentAlert" />
+    <NavigationProperty Name="Store" Relationship="Self.FK_XDocumentFrequency_Stores" FromRole="XDocumentFrequency" ToRole="Stores" />
+    <NavigationProperty Name="XDocumentDefinition" Relationship="Self.FK_XDocumentFrequency_XDocumentDefinition" FromRole="XDocumentFrequency" ToRole="XDocumentDefinition" />
+    <NavigationProperty Name="XDocumentUserAlerts" Relationship="Self.FK_XDocumentUserAlert_XDocumentFrequency" FromRole="XDocumentFrequency" ToRole="XDocumentUserAlert" />
+  </EntityType>
+  <EntityType Name="XDocumentReferedContent">
+    <Key>
+      <PropertyRef Name="referedContentID" />
+    </Key>
+    <Property Name="referedContentID" Type="Int32" Nullable="false" />
+    <Property Name="documentSectionID" Type="Int32" />
+    <Property Name="controlID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="translation" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="documentDefinitionID" Type="Int32" />
+    <Property Name="documentContentID" Type="Int32" />
+    <Property Name="isFrwdToNextSubmittedForms" Type="Boolean" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XDocumentReferedContent_CrossTable_businesstransaction" FromRole="XDocumentReferedContent" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XDocumentDefinition" Relationship="Self.FK_XDocumentReferedContent_XDocumentDefinition" FromRole="XDocumentReferedContent" ToRole="XDocumentDefinition" />
+    <NavigationProperty Name="XDocumentSection" Relationship="Self.FK_XDocumentReferedContent_XDocumentSection" FromRole="XDocumentReferedContent" ToRole="XDocumentSection" />
+    <NavigationProperty Name="XDocumentTableContent" Relationship="Self.FK_XDocumentReferedContent_XDocumentTableContent" FromRole="XDocumentReferedContent" ToRole="XDocumentTableContent" />
+  </EntityType>
+  <EntityType Name="XDocumentRole">
+    <Key>
+      <PropertyRef Name="xDocumentRoleID" />
+    </Key>
+    <Property Name="xDocumentRoleID" Type="Int32" Nullable="false" />
+    <Property Name="xDocumentDefinitionID" Type="Int32" />
+    <Property Name="role" Type="Int32" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XDocumentRole_CrossTable_businesstransaction" FromRole="XDocumentRole" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XDocumentDefinition" Relationship="Self.FK_XDocumentRole_XDocumentDefinition" FromRole="XDocumentRole" ToRole="XDocumentDefinition" />
+  </EntityType>
+  <EntityType Name="XDocumentRoleAlert">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="xDocumentDefinitionID" Type="Int32" />
+    <Property Name="role" Type="Int32" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XDocumentRoleAlert_CrossTable_businesstransaction" FromRole="XDocumentRoleAlert" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XDocumentDefinition" Relationship="Self.FK_XDocumentRoleAlert_XDocumentDefinition" FromRole="XDocumentRoleAlert" ToRole="XDocumentDefinition" />
+  </EntityType>
+  <EntityType Name="XDocumentRoleRoute">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="xDocumentDefinitionID" Type="Int32" />
+    <Property Name="role" Type="Int32" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XDocumentRoleRoute_CrossTable_businesstransaction" FromRole="XDocumentRoleRoute" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XDocumentDefinition" Relationship="Self.FK_XDocumentRoleRoute_XDocumentDefinition" FromRole="XDocumentRoleRoute" ToRole="XDocumentDefinition" />
+  </EntityType>
+  <EntityType Name="XDocumentRoute">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="xDocumentDefinitionID" Type="Int32" />
+    <Property Name="role" Type="Int32" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XDocumentRoute_CrossTable_businesstransaction" FromRole="XDocumentRoute" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XDocumentDefinition" Relationship="Self.FK_XDocumentRoute_XDocumentDefinition" FromRole="XDocumentRoute" ToRole="XDocumentDefinition" />
+  </EntityType>
+  <EntityType Name="XDocumentRouteUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="xDocumentDefinitionID" Type="Int32" />
+    <Property Name="userID" Type="Int32" />
+    <Property Name="role" Type="Int32" />
+    <Property Name="userEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="transID" Type="Int64" />
+    <Property Name="storeID" Type="Int32" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XDocumentRouteUsers_CrossTable_businesstransaction" FromRole="XDocumentRouteUsers" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="Store" Relationship="Self.FK_XDocumentRouteUsers_Stores" FromRole="XDocumentRouteUsers" ToRole="Stores" />
+    <NavigationProperty Name="XDocumentDefinition" Relationship="Self.FK_XDocumentRouteUsers_XDocumentDefinition" FromRole="XDocumentRouteUsers" ToRole="XDocumentDefinition" />
+  </EntityType>
+  <EntityType Name="XDocumentSection">
+    <Key>
+      <PropertyRef Name="documentSectionID" />
+    </Key>
+    <Property Name="documentSectionID" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pageID" Type="Int32" />
+    <Property Name="flow" Type="Int32" />
+    <Property Name="documentDefinitionID" Type="Int32" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="isReport" Type="Int32" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XDocumentSection_CrossTable_businesstransaction" FromRole="XDocumentSection" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="CrossTable_pagename" Relationship="Self.FK_XDocumentSection_CrossTable_pagename" FromRole="XDocumentSection" ToRole="CrossTable_pagename" />
+    <NavigationProperty Name="CrossTable_pagename1" Relationship="Self.FK_XDocumentSection_CrossTable_pagename1" FromRole="XDocumentSection" ToRole="CrossTable_pagename" />
+    <NavigationProperty Name="XDocumentDefinition" Relationship="Self.FK_XDocumentSection_XDocumentDefinition" FromRole="XDocumentSection" ToRole="XDocumentDefinition" />
+    <NavigationProperty Name="XDocumentReferedContents" Relationship="Self.FK_XDocumentReferedContent_XDocumentSection" FromRole="XDocumentSection" ToRole="XDocumentReferedContent" />
+    <NavigationProperty Name="XDocumentTables" Relationship="Self.FK_XDocumentTable_XDocumentSection" FromRole="XDocumentSection" ToRole="XDocumentTable" />
+    <NavigationProperty Name="XReportSections" Relationship="Self.FK_XReportSection_XDocumentSection" FromRole="XDocumentSection" ToRole="XReportSection" />
+    <NavigationProperty Name="XReportTableContents" Relationship="Self.FK_XReportTableContent_XDocumentSection" FromRole="XDocumentSection" ToRole="XReportTableContent" />
+  </EntityType>
+  <EntityType Name="XDocumentStore">
+    <Key>
+      <PropertyRef Name="documentStoreID" />
+    </Key>
+    <Property Name="documentStoreID" Type="Int32" Nullable="false" />
+    <Property Name="documentDefinitionID" Type="Int32" />
+    <Property Name="storeID" Type="Int32" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XDocumentStore_CrossTable_businesstransaction" FromRole="XDocumentStore" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="Store" Relationship="Self.FK_XDocumentStore_Stores" FromRole="XDocumentStore" ToRole="Stores" />
+    <NavigationProperty Name="XDocumentDefinition" Relationship="Self.FK_XDocumentStore_XDocumentDefinition" FromRole="XDocumentStore" ToRole="XDocumentDefinition" />
+  </EntityType>
+  <EntityType Name="XDocumentTable">
+    <Key>
+      <PropertyRef Name="documentTableID" />
+    </Key>
+    <Property Name="documentTableID" Type="Int32" Nullable="false" />
+    <Property Name="documentSectionID" Type="Int32" />
+    <Property Name="dataToggle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tableControlID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="cssClass" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XDocumentTable_CrossTable_businesstransaction" FromRole="XDocumentTable" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XDocumentSection" Relationship="Self.FK_XDocumentTable_XDocumentSection" FromRole="XDocumentTable" ToRole="XDocumentSection" />
+    <NavigationProperty Name="XDocumentTableTRs" Relationship="Self.FK_XDocumentTableTR_XDocumentTable" FromRole="XDocumentTable" ToRole="XDocumentTableTR" />
+  </EntityType>
+  <EntityType Name="XDocumentTableContent">
+    <Key>
+      <PropertyRef Name="documentTableContentID" />
+    </Key>
+    <Property Name="documentTableContentID" Type="Int32" Nullable="false" />
+    <Property Name="tdID" Type="Int32" />
+    <Property Name="controlType" Type="Byte" />
+    <Property Name="controlName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="controlID" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="mask" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="isRequired" Type="Boolean" />
+    <Property Name="translation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cssClass" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="height" Type="Int32" />
+    <Property Name="width" Type="Int32" />
+    <Property Name="sequence" Type="Int64" />
+    <Property Name="lookupName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="colspan" Type="Byte" />
+    <Property Name="defaultValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="points" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="isReadonly" Type="Boolean" />
+    <Property Name="formula" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="conditions" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="rows" Type="Int32" />
+    <Property Name="cells" Type="Int32" />
+    <Property Name="refControlID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="rowspan" Type="Int32" />
+    <Property Name="src" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="labelAssociate" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="documentSectionID" Type="Int32" />
+    <Property Name="labelSkip" Type="Boolean" />
+    <Property Name="isReceivedFromLastSubmittedForm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reportFieldColspan" Type="Int32" />
+    <Property Name="transID" Type="Int64" />
+    <Property Name="reportHeadingTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="isNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XDocumentTableContent_CrossTable_businesstransaction" FromRole="XDocumentTableContent" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XDocumentReferedContents" Relationship="Self.FK_XDocumentReferedContent_XDocumentTableContent" FromRole="XDocumentTableContent" ToRole="XDocumentReferedContent" />
+    <NavigationProperty Name="XDocumentTableTD" Relationship="Self.FK_XDocumentTableContent_XDocumentTableTD" FromRole="XDocumentTableContent" ToRole="XDocumentTableTD" />
+  </EntityType>
+  <EntityType Name="XDocumentTableTD">
+    <Key>
+      <PropertyRef Name="tdID" />
+    </Key>
+    <Property Name="tdID" Type="Int32" Nullable="false" />
+    <Property Name="tdControlID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="trID" Type="Int32" />
+    <Property Name="cssClass" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="colspan" Type="Byte" />
+    <Property Name="tdType" Type="Int32" />
+    <Property Name="pts" Type="Int32" />
+    <Property Name="rowspan" Type="Byte" />
+    <Property Name="col" Type="Int32" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XDocumentTableTD_CrossTable_businesstransaction" FromRole="XDocumentTableTD" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XDocumentTableContents" Relationship="Self.FK_XDocumentTableContent_XDocumentTableTD" FromRole="XDocumentTableTD" ToRole="XDocumentTableContent" />
+    <NavigationProperty Name="XDocumentTableTR" Relationship="Self.FK_XDocumentTableTD_XDocumentTableTR" FromRole="XDocumentTableTD" ToRole="XDocumentTableTR" />
+  </EntityType>
+  <EntityType Name="XDocumentTableTR">
+    <Key>
+      <PropertyRef Name="trID" />
+    </Key>
+    <Property Name="trID" Type="Int32" Nullable="false" />
+    <Property Name="trControlID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="cssClass" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="documentTableID" Type="Int32" />
+    <Property Name="row" Type="Int32" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XDocumentTableTR_CrossTable_businesstransaction" FromRole="XDocumentTableTR" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XDocumentTable" Relationship="Self.FK_XDocumentTableTR_XDocumentTable" FromRole="XDocumentTableTR" ToRole="XDocumentTable" />
+    <NavigationProperty Name="XDocumentTableTDs" Relationship="Self.FK_XDocumentTableTD_XDocumentTableTR" FromRole="XDocumentTableTR" ToRole="XDocumentTableTD" />
+  </EntityType>
+  <EntityType Name="XDocumentUserAlert">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="xDocumentDefinitionID" Type="Int32" />
+    <Property Name="userID" Type="Int32" />
+    <Property Name="userEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="storeID" Type="Int32" />
+    <Property Name="transID" Type="Int64" />
+    <Property Name="xDocumentFormFrequencyID" Type="Int32" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XDocumentUserAlert_CrossTable_businesstransaction" FromRole="XDocumentUserAlert" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="Store" Relationship="Self.FK_XDocumentUserAlert_Stores" FromRole="XDocumentUserAlert" ToRole="Stores" />
+    <NavigationProperty Name="XDocumentDefinition" Relationship="Self.FK_XDocumentUserAlert_XDocumentDefinition" FromRole="XDocumentUserAlert" ToRole="XDocumentDefinition" />
+    <NavigationProperty Name="XDocumentFrequency" Relationship="Self.FK_XDocumentUserAlert_XDocumentFrequency" FromRole="XDocumentUserAlert" ToRole="XDocumentFrequency" />
+  </EntityType>
+  <EntityType Name="XReportDefinition">
+    <Key>
+      <PropertyRef Name="xReportDefinitionID" />
+    </Key>
+    <Property Name="xReportDefinitionID" Type="Int32" Nullable="false" />
+    <Property Name="documentDefinitionID" Type="Int32" />
+    <Property Name="vendorID" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XReportDefinition_CrossTable_businesstransaction" FromRole="XReportDefinition" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="CrossTable_vendor" Relationship="Self.FK_XReportDefinition_CrossTable_vendor" FromRole="XReportDefinition" ToRole="CrossTable_vendor" />
+    <NavigationProperty Name="XDocumentDefinition" Relationship="Self.FK_XReportDefinition_XDocumentDefinition" FromRole="XReportDefinition" ToRole="XDocumentDefinition" />
+    <NavigationProperty Name="XReportSections" Relationship="Self.FK_XReportSection_XReportDefinition" FromRole="XReportDefinition" ToRole="XReportSection" />
+    <NavigationProperty Name="XReportTables" Relationship="Self.FK_XReportTable_XReportDefinition" FromRole="XReportDefinition" ToRole="XReportTable" />
+  </EntityType>
+  <EntityType Name="XReportSection">
+    <Key>
+      <PropertyRef Name="reportSectionTableID" />
+    </Key>
+    <Property Name="reportSectionTableID" Type="Int32" Nullable="false" />
+    <Property Name="xReportDefinitionID" Type="Int32" />
+    <Property Name="xDocumentSectionID" Type="Int32" />
+    <Property Name="row" Type="Byte" />
+    <Property Name="cell" Type="Byte" />
+    <Property Name="rowspan" Type="Byte" />
+    <Property Name="colspan" Type="Byte" />
+    <Property Name="cssClass" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XReportSection_CrossTable_businesstransaction" FromRole="XReportSection" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XDocumentSection" Relationship="Self.FK_XReportSection_XDocumentSection" FromRole="XReportSection" ToRole="XDocumentSection" />
+    <NavigationProperty Name="XReportDefinition" Relationship="Self.FK_XReportSection_XReportDefinition" FromRole="XReportSection" ToRole="XReportDefinition" />
+  </EntityType>
+  <EntityType Name="XReportTable">
+    <Key>
+      <PropertyRef Name="reportTableID" />
+    </Key>
+    <Property Name="reportTableID" Type="Int32" Nullable="false" />
+    <Property Name="xReportDefinitionID" Type="Int32" />
+    <Property Name="cssClass" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="reportTableHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="documentSectionID" Type="Int32" />
+    <Property Name="parentTableID" Type="Byte" />
+    <Property Name="isDifferentReport" Type="Boolean" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XReportTable_CrossTable_businesstransaction" FromRole="XReportTable" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XReportDefinition" Relationship="Self.FK_XReportTable_XReportDefinition" FromRole="XReportTable" ToRole="XReportDefinition" />
+    <NavigationProperty Name="XReportTableTRs" Relationship="Self.FK_XReportTableTR_XReportTable" FromRole="XReportTable" ToRole="XReportTableTR" />
+  </EntityType>
+  <EntityType Name="XReportTableContent">
+    <Key>
+      <PropertyRef Name="reportTableContentID" />
+    </Key>
+    <Property Name="reportTableContentID" Type="Int32" Nullable="false" />
+    <Property Name="tdID" Type="Int32" />
+    <Property Name="controlType" Type="Byte" />
+    <Property Name="controlName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="controlID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="mask" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="isRequired" Type="Boolean" />
+    <Property Name="translation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="cssClass" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="height" Type="Int32" />
+    <Property Name="width" Type="Int32" />
+    <Property Name="sequence" Type="Int32" />
+    <Property Name="lookupName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="colspan" Type="Byte" />
+    <Property Name="defaultValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="points" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="isReadonly" Type="Boolean" />
+    <Property Name="formula" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="conditions" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="rows" Type="Byte" />
+    <Property Name="cells" Type="Byte" />
+    <Property Name="refControlID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="rowspan" Type="Byte" />
+    <Property Name="src" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="labelAssociate" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="documentControlID" Type="Int32" />
+    <Property Name="documentSectionID" Type="Int32" />
+    <Property Name="labelSkip" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="isReceivedFromLastSubmittedForm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reportFieldColspan" Type="Int32" />
+    <Property Name="transID" Type="Int64" />
+    <Property Name="reportHeadingTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="isNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XReportTableContent_CrossTable_businesstransaction" FromRole="XReportTableContent" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XDocumentSection" Relationship="Self.FK_XReportTableContent_XDocumentSection" FromRole="XReportTableContent" ToRole="XDocumentSection" />
+    <NavigationProperty Name="XReportTableTD" Relationship="Self.FK_XReportTableContent_XReportTableTD" FromRole="XReportTableContent" ToRole="XReportTableTD" />
+  </EntityType>
+  <EntityType Name="XReportTableTD">
+    <Key>
+      <PropertyRef Name="reportTdID" />
+    </Key>
+    <Property Name="reportTdID" Type="Int32" Nullable="false" />
+    <Property Name="reportTrID" Type="Int32" />
+    <Property Name="tdControlID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="cssClass" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="tdType" Type="Int32" />
+    <Property Name="colspan" Type="Byte" />
+    <Property Name="rowspan" Type="Byte" />
+    <Property Name="col" Type="Byte" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XReportTableTD_CrossTable_businesstransaction" FromRole="XReportTableTD" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XReportTableContents" Relationship="Self.FK_XReportTableContent_XReportTableTD" FromRole="XReportTableTD" ToRole="XReportTableContent" />
+    <NavigationProperty Name="XReportTableTR" Relationship="Self.FK_XReportTableTD_XReportTableTR" FromRole="XReportTableTD" ToRole="XReportTableTR" />
+  </EntityType>
+  <EntityType Name="XReportTableTR">
+    <Key>
+      <PropertyRef Name="reportTrID" />
+    </Key>
+    <Property Name="reportTrID" Type="Int32" Nullable="false" />
+    <Property Name="trControlID" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="cssClass" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="reportTableID" Type="Int32" />
+    <Property Name="row" Type="Byte" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XReportTableTR_CrossTable_businesstransaction" FromRole="XReportTableTR" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="XReportTable" Relationship="Self.FK_XReportTableTR_XReportTable" FromRole="XReportTableTR" ToRole="XReportTable" />
+    <NavigationProperty Name="XReportTableTDs" Relationship="Self.FK_XReportTableTD_XReportTableTR" FromRole="XReportTableTR" ToRole="XReportTableTD" />
+  </EntityType>
+  <EntityType Name="XTaskDefinition">
+    <Key>
+      <PropertyRef Name="xTaskDefinitionID" />
+    </Key>
+    <Property Name="xTaskDefinitionID" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="openService" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="completeService" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="parameters" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dueDays" Type="Int32" />
+    <Property Name="deadLineDays" Type="Int32" />
+    <Property Name="body" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="route" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="initiateAuditEvent" Type="Int32" />
+    <Property Name="inprogressAuditEvent" Type="Int32" />
+    <Property Name="completeAuditEvent" Type="Int32" />
+    <Property Name="transID" Type="Int64" />
+    <NavigationProperty Name="CrossTable_businesstransaction" Relationship="Self.FK_XTaskDefinition_CrossTable_businesstransaction" FromRole="XTaskDefinition" ToRole="CrossTable_businesstransaction" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK_Task_XTaskDefinition" FromRole="XTaskDefinition" ToRole="Task" />
+    <NavigationProperty Name="XTaskDefinition1" Relationship="Self.FK_XTaskDefinition_XTaskDefinition" FromRole="XTaskDefinition" ToRole="XTaskDefinition1" />
+    <NavigationProperty Name="XTaskDefinition2" Relationship="Self.FK_XTaskDefinition_XTaskDefinition" FromRole="XTaskDefinition1" ToRole="XTaskDefinition" />
+  </EntityType>
+  <Association Name="FK_Document_XDocuments_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentAlert_XDocuments_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="DocumentAlert" Type="Self.DocumentAlert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="DocumentAlert">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stores_XDocuments_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="Stores" Type="Self.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="Stores">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_XDocuments_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentDefinition_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XDocumentDefinition" Type="Self.XDocumentDefinition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XDocumentDefinition">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentReferedContent_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XDocumentReferedContent" Type="Self.XDocumentReferedContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XDocumentReferedContent">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentRole_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XDocumentRole" Type="Self.XDocumentRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XDocumentRole">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentRoleAlert_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XDocumentRoleAlert" Type="Self.XDocumentRoleAlert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XDocumentRoleAlert">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentRoleRoute_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XDocumentRoleRoute" Type="Self.XDocumentRoleRoute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XDocumentRoleRoute">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentRoute_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XDocumentRoute" Type="Self.XDocumentRoute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XDocumentRoute">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentRouteUsers_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XDocumentRouteUsers" Type="Self.XDocumentRouteUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XDocumentRouteUsers">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentSection_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XDocumentSection" Type="Self.XDocumentSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XDocumentSection">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentStore_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XDocumentStore" Type="Self.XDocumentStore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XDocumentStore">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentTable_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XDocumentTable" Type="Self.XDocumentTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XDocumentTable">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentTableContent_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XDocumentTableContent" Type="Self.XDocumentTableContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XDocumentTableContent">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentTableTD_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XDocumentTableTD" Type="Self.XDocumentTableTD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XDocumentTableTD">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentTableTR_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XDocumentTableTR" Type="Self.XDocumentTableTR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XDocumentTableTR">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentUserAlert_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XDocumentUserAlert" Type="Self.XDocumentUserAlert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XDocumentUserAlert">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportDefinition_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XReportDefinition" Type="Self.XReportDefinition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XReportDefinition">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportSection_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XReportSection" Type="Self.XReportSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XReportSection">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportTable_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XReportTable" Type="Self.XReportTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XReportTable">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportTableContent_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XReportTableContent" Type="Self.XReportTableContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XReportTableContent">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportTableTD_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XReportTableTD" Type="Self.XReportTableTD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XReportTableTD">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportTableTR_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XReportTableTR" Type="Self.XReportTableTR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XReportTableTR">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XTaskDefinition_CrossTable_businesstransaction">
+    <End Role="CrossTable_businesstransaction" Type="Self.CrossTable_businesstransaction" Multiplicity="0..1" />
+    <End Role="XTaskDefinition" Type="Self.XTaskDefinition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_businesstransaction">
+        <PropertyRef Name="TransID" />
+      </Principal>
+      <Dependent Role="XTaskDefinition">
+        <PropertyRef Name="transID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentSection_CrossTable_pagename">
+    <End Role="CrossTable_pagename" Type="Self.CrossTable_pagename" Multiplicity="0..1" />
+    <End Role="XDocumentSection" Type="Self.XDocumentSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_pagename">
+        <PropertyRef Name="pageID" />
+      </Principal>
+      <Dependent Role="XDocumentSection">
+        <PropertyRef Name="pageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentSection_CrossTable_pagename1">
+    <End Role="CrossTable_pagename" Type="Self.CrossTable_pagename" Multiplicity="0..1" />
+    <End Role="XDocumentSection" Type="Self.XDocumentSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_pagename">
+        <PropertyRef Name="pageID" />
+      </Principal>
+      <Dependent Role="XDocumentSection">
+        <PropertyRef Name="pageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_XDocument_Vendor">
+    <End Role="CrossTable_vendor" Type="Self.CrossTable_vendor" Multiplicity="0..1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_vendor">
+        <PropertyRef Name="vendorID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="vendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stores_XDocuments_vendor">
+    <End Role="CrossTable_vendor" Type="Self.CrossTable_vendor" Multiplicity="0..1" />
+    <End Role="Stores" Type="Self.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_vendor">
+        <PropertyRef Name="vendorID" />
+      </Principal>
+      <Dependent Role="Stores">
+        <PropertyRef Name="vendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_XDocuments_vendor">
+    <End Role="CrossTable_vendor" Type="Self.CrossTable_vendor" Multiplicity="0..1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_vendor">
+        <PropertyRef Name="vendorID" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="vendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentDefinition_CrossTable_vendor">
+    <End Role="CrossTable_vendor" Type="Self.CrossTable_vendor" Multiplicity="0..1" />
+    <End Role="XDocumentDefinition" Type="Self.XDocumentDefinition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_vendor">
+        <PropertyRef Name="vendorID" />
+      </Principal>
+      <Dependent Role="XDocumentDefinition">
+        <PropertyRef Name="vendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportDefinition_CrossTable_vendor">
+    <End Role="CrossTable_vendor" Type="Self.CrossTable_vendor" Multiplicity="0..1" />
+    <End Role="XReportDefinition" Type="Self.XReportDefinition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrossTable_vendor">
+        <PropertyRef Name="vendorID" />
+      </Principal>
+      <Dependent Role="XReportDefinition">
+        <PropertyRef Name="vendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_Document">
+    <End Role="Document" Type="Self.Document" Multiplicity="1" />
+    <End Role="Document1" Type="Self.Document" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Document">
+        <PropertyRef Name="documentID" />
+      </Principal>
+      <Dependent Role="Document1">
+        <PropertyRef Name="documentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_document_stores">
+    <End Role="Stores" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="storeID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="storeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_document_xdocumentdefinition">
+    <End Role="XDocumentDefinition" Type="Self.XDocumentDefinition" Multiplicity="0..1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentDefinition">
+        <PropertyRef Name="xDocumentDefinationID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="documentDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_document_xdocumentfrequency">
+    <End Role="XDocumentFrequency" Type="Self.XDocumentFrequency" Multiplicity="0..1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentFrequency">
+        <PropertyRef Name="xDocumentFormFrequencyID" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="frequencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documentalert_xdocumentfrequency">
+    <End Role="XDocumentFrequency" Type="Self.XDocumentFrequency" Multiplicity="0..1" />
+    <End Role="DocumentAlert" Type="Self.DocumentAlert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentFrequency">
+        <PropertyRef Name="xDocumentFormFrequencyID" />
+      </Principal>
+      <Dependent Role="DocumentAlert">
+        <PropertyRef Name="frequencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentFrequency_Stores">
+    <End Role="Stores" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="XDocumentFrequency" Type="Self.XDocumentFrequency" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="storeID" />
+      </Principal>
+      <Dependent Role="XDocumentFrequency">
+        <PropertyRef Name="storeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentRouteUsers_Stores">
+    <End Role="Stores" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="XDocumentRouteUsers" Type="Self.XDocumentRouteUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="storeID" />
+      </Principal>
+      <Dependent Role="XDocumentRouteUsers">
+        <PropertyRef Name="storeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentStore_Stores">
+    <End Role="Stores" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="XDocumentStore" Type="Self.XDocumentStore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="storeID" />
+      </Principal>
+      <Dependent Role="XDocumentStore">
+        <PropertyRef Name="storeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentUserAlert_Stores">
+    <End Role="Stores" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="XDocumentUserAlert" Type="Self.XDocumentUserAlert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="storeID" />
+      </Principal>
+      <Dependent Role="XDocumentUserAlert">
+        <PropertyRef Name="storeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_XTaskDefinition">
+    <End Role="XTaskDefinition" Type="Self.XTaskDefinition" Multiplicity="0..1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XTaskDefinition">
+        <PropertyRef Name="xTaskDefinitionID" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="taskDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentFrequency_XDocumentDefinition">
+    <End Role="XDocumentDefinition" Type="Self.XDocumentDefinition" Multiplicity="0..1" />
+    <End Role="XDocumentFrequency" Type="Self.XDocumentFrequency" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentDefinition">
+        <PropertyRef Name="xDocumentDefinationID" />
+      </Principal>
+      <Dependent Role="XDocumentFrequency">
+        <PropertyRef Name="xDocumentDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentReferedContent_XDocumentDefinition">
+    <End Role="XDocumentDefinition" Type="Self.XDocumentDefinition" Multiplicity="0..1" />
+    <End Role="XDocumentReferedContent" Type="Self.XDocumentReferedContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentDefinition">
+        <PropertyRef Name="xDocumentDefinationID" />
+      </Principal>
+      <Dependent Role="XDocumentReferedContent">
+        <PropertyRef Name="documentDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentRole_XDocumentDefinition">
+    <End Role="XDocumentDefinition" Type="Self.XDocumentDefinition" Multiplicity="0..1" />
+    <End Role="XDocumentRole" Type="Self.XDocumentRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentDefinition">
+        <PropertyRef Name="xDocumentDefinationID" />
+      </Principal>
+      <Dependent Role="XDocumentRole">
+        <PropertyRef Name="xDocumentDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentRoleAlert_XDocumentDefinition">
+    <End Role="XDocumentDefinition" Type="Self.XDocumentDefinition" Multiplicity="0..1" />
+    <End Role="XDocumentRoleAlert" Type="Self.XDocumentRoleAlert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentDefinition">
+        <PropertyRef Name="xDocumentDefinationID" />
+      </Principal>
+      <Dependent Role="XDocumentRoleAlert">
+        <PropertyRef Name="xDocumentDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentRoleRoute_XDocumentDefinition">
+    <End Role="XDocumentDefinition" Type="Self.XDocumentDefinition" Multiplicity="0..1" />
+    <End Role="XDocumentRoleRoute" Type="Self.XDocumentRoleRoute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentDefinition">
+        <PropertyRef Name="xDocumentDefinationID" />
+      </Principal>
+      <Dependent Role="XDocumentRoleRoute">
+        <PropertyRef Name="xDocumentDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentRoute_XDocumentDefinition">
+    <End Role="XDocumentDefinition" Type="Self.XDocumentDefinition" Multiplicity="0..1" />
+    <End Role="XDocumentRoute" Type="Self.XDocumentRoute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentDefinition">
+        <PropertyRef Name="xDocumentDefinationID" />
+      </Principal>
+      <Dependent Role="XDocumentRoute">
+        <PropertyRef Name="xDocumentDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentRouteUsers_XDocumentDefinition">
+    <End Role="XDocumentDefinition" Type="Self.XDocumentDefinition" Multiplicity="0..1" />
+    <End Role="XDocumentRouteUsers" Type="Self.XDocumentRouteUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentDefinition">
+        <PropertyRef Name="xDocumentDefinationID" />
+      </Principal>
+      <Dependent Role="XDocumentRouteUsers">
+        <PropertyRef Name="xDocumentDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentSection_XDocumentDefinition">
+    <End Role="XDocumentDefinition" Type="Self.XDocumentDefinition" Multiplicity="0..1" />
+    <End Role="XDocumentSection" Type="Self.XDocumentSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentDefinition">
+        <PropertyRef Name="xDocumentDefinationID" />
+      </Principal>
+      <Dependent Role="XDocumentSection">
+        <PropertyRef Name="documentDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentStore_XDocumentDefinition">
+    <End Role="XDocumentDefinition" Type="Self.XDocumentDefinition" Multiplicity="0..1" />
+    <End Role="XDocumentStore" Type="Self.XDocumentStore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentDefinition">
+        <PropertyRef Name="xDocumentDefinationID" />
+      </Principal>
+      <Dependent Role="XDocumentStore">
+        <PropertyRef Name="documentDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentUserAlert_XDocumentDefinition">
+    <End Role="XDocumentDefinition" Type="Self.XDocumentDefinition" Multiplicity="0..1" />
+    <End Role="XDocumentUserAlert" Type="Self.XDocumentUserAlert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentDefinition">
+        <PropertyRef Name="xDocumentDefinationID" />
+      </Principal>
+      <Dependent Role="XDocumentUserAlert">
+        <PropertyRef Name="xDocumentDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportDefinition_XDocumentDefinition">
+    <End Role="XDocumentDefinition" Type="Self.XDocumentDefinition" Multiplicity="0..1" />
+    <End Role="XReportDefinition" Type="Self.XReportDefinition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentDefinition">
+        <PropertyRef Name="xDocumentDefinationID" />
+      </Principal>
+      <Dependent Role="XReportDefinition">
+        <PropertyRef Name="documentDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentUserAlert_XDocumentFrequency">
+    <End Role="XDocumentFrequency" Type="Self.XDocumentFrequency" Multiplicity="0..1" />
+    <End Role="XDocumentUserAlert" Type="Self.XDocumentUserAlert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentFrequency">
+        <PropertyRef Name="xDocumentFormFrequencyID" />
+      </Principal>
+      <Dependent Role="XDocumentUserAlert">
+        <PropertyRef Name="xDocumentFormFrequencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentReferedContent_XDocumentSection">
+    <End Role="XDocumentSection" Type="Self.XDocumentSection" Multiplicity="0..1" />
+    <End Role="XDocumentReferedContent" Type="Self.XDocumentReferedContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentSection">
+        <PropertyRef Name="documentSectionID" />
+      </Principal>
+      <Dependent Role="XDocumentReferedContent">
+        <PropertyRef Name="documentSectionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentReferedContent_XDocumentTableContent">
+    <End Role="XDocumentTableContent" Type="Self.XDocumentTableContent" Multiplicity="0..1" />
+    <End Role="XDocumentReferedContent" Type="Self.XDocumentReferedContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentTableContent">
+        <PropertyRef Name="documentTableContentID" />
+      </Principal>
+      <Dependent Role="XDocumentReferedContent">
+        <PropertyRef Name="documentContentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentTable_XDocumentSection">
+    <End Role="XDocumentSection" Type="Self.XDocumentSection" Multiplicity="0..1" />
+    <End Role="XDocumentTable" Type="Self.XDocumentTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentSection">
+        <PropertyRef Name="documentSectionID" />
+      </Principal>
+      <Dependent Role="XDocumentTable">
+        <PropertyRef Name="documentSectionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportSection_XDocumentSection">
+    <End Role="XDocumentSection" Type="Self.XDocumentSection" Multiplicity="0..1" />
+    <End Role="XReportSection" Type="Self.XReportSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentSection">
+        <PropertyRef Name="documentSectionID" />
+      </Principal>
+      <Dependent Role="XReportSection">
+        <PropertyRef Name="xDocumentSectionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportTableContent_XDocumentSection">
+    <End Role="XDocumentSection" Type="Self.XDocumentSection" Multiplicity="0..1" />
+    <End Role="XReportTableContent" Type="Self.XReportTableContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentSection">
+        <PropertyRef Name="documentSectionID" />
+      </Principal>
+      <Dependent Role="XReportTableContent">
+        <PropertyRef Name="documentSectionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentTableTR_XDocumentTable">
+    <End Role="XDocumentTable" Type="Self.XDocumentTable" Multiplicity="0..1" />
+    <End Role="XDocumentTableTR" Type="Self.XDocumentTableTR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentTable">
+        <PropertyRef Name="documentTableID" />
+      </Principal>
+      <Dependent Role="XDocumentTableTR">
+        <PropertyRef Name="documentTableID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentTableContent_XDocumentTableTD">
+    <End Role="XDocumentTableTD" Type="Self.XDocumentTableTD" Multiplicity="0..1" />
+    <End Role="XDocumentTableContent" Type="Self.XDocumentTableContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentTableTD">
+        <PropertyRef Name="tdID" />
+      </Principal>
+      <Dependent Role="XDocumentTableContent">
+        <PropertyRef Name="tdID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XDocumentTableTD_XDocumentTableTR">
+    <End Role="XDocumentTableTR" Type="Self.XDocumentTableTR" Multiplicity="0..1" />
+    <End Role="XDocumentTableTD" Type="Self.XDocumentTableTD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XDocumentTableTR">
+        <PropertyRef Name="trID" />
+      </Principal>
+      <Dependent Role="XDocumentTableTD">
+        <PropertyRef Name="trID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportSection_XReportDefinition">
+    <End Role="XReportDefinition" Type="Self.XReportDefinition" Multiplicity="0..1" />
+    <End Role="XReportSection" Type="Self.XReportSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XReportDefinition">
+        <PropertyRef Name="xReportDefinitionID" />
+      </Principal>
+      <Dependent Role="XReportSection">
+        <PropertyRef Name="xReportDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportTable_XReportDefinition">
+    <End Role="XReportDefinition" Type="Self.XReportDefinition" Multiplicity="0..1" />
+    <End Role="XReportTable" Type="Self.XReportTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XReportDefinition">
+        <PropertyRef Name="xReportDefinitionID" />
+      </Principal>
+      <Dependent Role="XReportTable">
+        <PropertyRef Name="xReportDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportTableTR_XReportTable">
+    <End Role="XReportTable" Type="Self.XReportTable" Multiplicity="0..1" />
+    <End Role="XReportTableTR" Type="Self.XReportTableTR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XReportTable">
+        <PropertyRef Name="reportTableID" />
+      </Principal>
+      <Dependent Role="XReportTableTR">
+        <PropertyRef Name="reportTableID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportTableContent_XReportTableTD">
+    <End Role="XReportTableTD" Type="Self.XReportTableTD" Multiplicity="0..1" />
+    <End Role="XReportTableContent" Type="Self.XReportTableContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XReportTableTD">
+        <PropertyRef Name="reportTdID" />
+      </Principal>
+      <Dependent Role="XReportTableContent">
+        <PropertyRef Name="tdID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XReportTableTD_XReportTableTR">
+    <End Role="XReportTableTR" Type="Self.XReportTableTR" Multiplicity="0..1" />
+    <End Role="XReportTableTD" Type="Self.XReportTableTD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XReportTableTR">
+        <PropertyRef Name="reportTrID" />
+      </Principal>
+      <Dependent Role="XReportTableTD">
+        <PropertyRef Name="reportTrID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XTaskDefinition_XTaskDefinition">
+    <End Role="XTaskDefinition" Type="Self.XTaskDefinition" Multiplicity="1" />
+    <End Role="XTaskDefinition1" Type="Self.XTaskDefinition" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="XTaskDefinition">
+        <PropertyRef Name="xTaskDefinitionID" />
+      </Principal>
+      <Dependent Role="XTaskDefinition1">
+        <PropertyRef Name="xTaskDefinitionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="kvcEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ApplicationCodes" EntityType="Self.ApplicationCode" />
+    <EntitySet Name="CrossTable_businesstransaction" EntityType="Self.CrossTable_businesstransaction" />
+    <EntitySet Name="CrossTable_pagename" EntityType="Self.CrossTable_pagename" />
+    <EntitySet Name="CrossTable_vendor" EntityType="Self.CrossTable_vendor" />
+    <EntitySet Name="Documents" EntityType="Self.Document" />
+    <EntitySet Name="DocumentAlerts" EntityType="Self.DocumentAlert" />
+    <EntitySet Name="Stores" EntityType="Self.Store" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Tasks" EntityType="Self.Task" />
+    <EntitySet Name="XDocumentDefinitions" EntityType="Self.XDocumentDefinition" />
+    <EntitySet Name="XDocumentFrequencies" EntityType="Self.XDocumentFrequency" />
+    <EntitySet Name="XDocumentReferedContents" EntityType="Self.XDocumentReferedContent" />
+    <EntitySet Name="XDocumentRoles" EntityType="Self.XDocumentRole" />
+    <EntitySet Name="XDocumentRoleAlerts" EntityType="Self.XDocumentRoleAlert" />
+    <EntitySet Name="XDocumentRoleRoutes" EntityType="Self.XDocumentRoleRoute" />
+    <EntitySet Name="XDocumentRoutes" EntityType="Self.XDocumentRoute" />
+    <EntitySet Name="XDocumentRouteUsers" EntityType="Self.XDocumentRouteUser" />
+    <EntitySet Name="XDocumentSections" EntityType="Self.XDocumentSection" />
+    <EntitySet Name="XDocumentStores" EntityType="Self.XDocumentStore" />
+    <EntitySet Name="XDocumentTables" EntityType="Self.XDocumentTable" />
+    <EntitySet Name="XDocumentTableContents" EntityType="Self.XDocumentTableContent" />
+    <EntitySet Name="XDocumentTableTDs" EntityType="Self.XDocumentTableTD" />
+    <EntitySet Name="XDocumentTableTRs" EntityType="Self.XDocumentTableTR" />
+    <EntitySet Name="XDocumentUserAlerts" EntityType="Self.XDocumentUserAlert" />
+    <EntitySet Name="XReportDefinitions" EntityType="Self.XReportDefinition" />
+    <EntitySet Name="XReportSections" EntityType="Self.XReportSection" />
+    <EntitySet Name="XReportTables" EntityType="Self.XReportTable" />
+    <EntitySet Name="XReportTableContents" EntityType="Self.XReportTableContent" />
+    <EntitySet Name="XReportTableTDs" EntityType="Self.XReportTableTD" />
+    <EntitySet Name="XReportTableTRs" EntityType="Self.XReportTableTR" />
+    <EntitySet Name="XTaskDefinitions" EntityType="Self.XTaskDefinition" />
+    <AssociationSet Name="FK_Document_XDocuments_businesstransaction" Association="Self.FK_Document_XDocuments_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentAlert_XDocuments_businesstransaction" Association="Self.FK_DocumentAlert_XDocuments_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="DocumentAlert" EntitySet="DocumentAlerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stores_XDocuments_businesstransaction" Association="Self.FK_Stores_XDocuments_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="Stores" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_XDocuments_businesstransaction" Association="Self.FK_Task_XDocuments_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="Task" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentDefinition_CrossTable_businesstransaction" Association="Self.FK_XDocumentDefinition_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XDocumentDefinition" EntitySet="XDocumentDefinitions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentReferedContent_CrossTable_businesstransaction" Association="Self.FK_XDocumentReferedContent_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XDocumentReferedContent" EntitySet="XDocumentReferedContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentRole_CrossTable_businesstransaction" Association="Self.FK_XDocumentRole_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XDocumentRole" EntitySet="XDocumentRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentRoleAlert_CrossTable_businesstransaction" Association="Self.FK_XDocumentRoleAlert_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XDocumentRoleAlert" EntitySet="XDocumentRoleAlerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentRoleRoute_CrossTable_businesstransaction" Association="Self.FK_XDocumentRoleRoute_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XDocumentRoleRoute" EntitySet="XDocumentRoleRoutes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentRoute_CrossTable_businesstransaction" Association="Self.FK_XDocumentRoute_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XDocumentRoute" EntitySet="XDocumentRoutes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentRouteUsers_CrossTable_businesstransaction" Association="Self.FK_XDocumentRouteUsers_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XDocumentRouteUsers" EntitySet="XDocumentRouteUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentSection_CrossTable_businesstransaction" Association="Self.FK_XDocumentSection_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XDocumentSection" EntitySet="XDocumentSections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentStore_CrossTable_businesstransaction" Association="Self.FK_XDocumentStore_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XDocumentStore" EntitySet="XDocumentStores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentTable_CrossTable_businesstransaction" Association="Self.FK_XDocumentTable_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XDocumentTable" EntitySet="XDocumentTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentTableContent_CrossTable_businesstransaction" Association="Self.FK_XDocumentTableContent_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XDocumentTableContent" EntitySet="XDocumentTableContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentTableTD_CrossTable_businesstransaction" Association="Self.FK_XDocumentTableTD_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XDocumentTableTD" EntitySet="XDocumentTableTDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentTableTR_CrossTable_businesstransaction" Association="Self.FK_XDocumentTableTR_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XDocumentTableTR" EntitySet="XDocumentTableTRs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentUserAlert_CrossTable_businesstransaction" Association="Self.FK_XDocumentUserAlert_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XDocumentUserAlert" EntitySet="XDocumentUserAlerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportDefinition_CrossTable_businesstransaction" Association="Self.FK_XReportDefinition_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XReportDefinition" EntitySet="XReportDefinitions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportSection_CrossTable_businesstransaction" Association="Self.FK_XReportSection_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XReportSection" EntitySet="XReportSections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportTable_CrossTable_businesstransaction" Association="Self.FK_XReportTable_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XReportTable" EntitySet="XReportTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportTableContent_CrossTable_businesstransaction" Association="Self.FK_XReportTableContent_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XReportTableContent" EntitySet="XReportTableContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportTableTD_CrossTable_businesstransaction" Association="Self.FK_XReportTableTD_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XReportTableTD" EntitySet="XReportTableTDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportTableTR_CrossTable_businesstransaction" Association="Self.FK_XReportTableTR_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XReportTableTR" EntitySet="XReportTableTRs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XTaskDefinition_CrossTable_businesstransaction" Association="Self.FK_XTaskDefinition_CrossTable_businesstransaction">
+      <End Role="CrossTable_businesstransaction" EntitySet="CrossTable_businesstransaction" />
+      <End Role="XTaskDefinition" EntitySet="XTaskDefinitions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentSection_CrossTable_pagename" Association="Self.FK_XDocumentSection_CrossTable_pagename">
+      <End Role="CrossTable_pagename" EntitySet="CrossTable_pagename" />
+      <End Role="XDocumentSection" EntitySet="XDocumentSections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentSection_CrossTable_pagename1" Association="Self.FK_XDocumentSection_CrossTable_pagename1">
+      <End Role="CrossTable_pagename" EntitySet="CrossTable_pagename" />
+      <End Role="XDocumentSection" EntitySet="XDocumentSections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_XDocument_Vendor" Association="Self.FK_Document_XDocument_Vendor">
+      <End Role="CrossTable_vendor" EntitySet="CrossTable_vendor" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stores_XDocuments_vendor" Association="Self.FK_Stores_XDocuments_vendor">
+      <End Role="CrossTable_vendor" EntitySet="CrossTable_vendor" />
+      <End Role="Stores" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_XDocuments_vendor" Association="Self.FK_Task_XDocuments_vendor">
+      <End Role="CrossTable_vendor" EntitySet="CrossTable_vendor" />
+      <End Role="Task" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentDefinition_CrossTable_vendor" Association="Self.FK_XDocumentDefinition_CrossTable_vendor">
+      <End Role="CrossTable_vendor" EntitySet="CrossTable_vendor" />
+      <End Role="XDocumentDefinition" EntitySet="XDocumentDefinitions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportDefinition_CrossTable_vendor" Association="Self.FK_XReportDefinition_CrossTable_vendor">
+      <End Role="CrossTable_vendor" EntitySet="CrossTable_vendor" />
+      <End Role="XReportDefinition" EntitySet="XReportDefinitions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_Document" Association="Self.FK_Document_Document">
+      <End Role="Document" EntitySet="Documents" />
+      <End Role="Document1" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_document_stores" Association="Self.FK_document_stores">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_document_xdocumentdefinition" Association="Self.FK_document_xdocumentdefinition">
+      <End Role="XDocumentDefinition" EntitySet="XDocumentDefinitions" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_document_xdocumentfrequency" Association="Self.FK_document_xdocumentfrequency">
+      <End Role="XDocumentFrequency" EntitySet="XDocumentFrequencies" />
+      <End Role="Document" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documentalert_xdocumentfrequency" Association="Self.FK_documentalert_xdocumentfrequency">
+      <End Role="XDocumentFrequency" EntitySet="XDocumentFrequencies" />
+      <End Role="DocumentAlert" EntitySet="DocumentAlerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentFrequency_Stores" Association="Self.FK_XDocumentFrequency_Stores">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="XDocumentFrequency" EntitySet="XDocumentFrequencies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentRouteUsers_Stores" Association="Self.FK_XDocumentRouteUsers_Stores">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="XDocumentRouteUsers" EntitySet="XDocumentRouteUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentStore_Stores" Association="Self.FK_XDocumentStore_Stores">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="XDocumentStore" EntitySet="XDocumentStores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentUserAlert_Stores" Association="Self.FK_XDocumentUserAlert_Stores">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="XDocumentUserAlert" EntitySet="XDocumentUserAlerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_XTaskDefinition" Association="Self.FK_Task_XTaskDefinition">
+      <End Role="XTaskDefinition" EntitySet="XTaskDefinitions" />
+      <End Role="Task" EntitySet="Tasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentFrequency_XDocumentDefinition" Association="Self.FK_XDocumentFrequency_XDocumentDefinition">
+      <End Role="XDocumentDefinition" EntitySet="XDocumentDefinitions" />
+      <End Role="XDocumentFrequency" EntitySet="XDocumentFrequencies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentReferedContent_XDocumentDefinition" Association="Self.FK_XDocumentReferedContent_XDocumentDefinition">
+      <End Role="XDocumentDefinition" EntitySet="XDocumentDefinitions" />
+      <End Role="XDocumentReferedContent" EntitySet="XDocumentReferedContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentRole_XDocumentDefinition" Association="Self.FK_XDocumentRole_XDocumentDefinition">
+      <End Role="XDocumentDefinition" EntitySet="XDocumentDefinitions" />
+      <End Role="XDocumentRole" EntitySet="XDocumentRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentRoleAlert_XDocumentDefinition" Association="Self.FK_XDocumentRoleAlert_XDocumentDefinition">
+      <End Role="XDocumentDefinition" EntitySet="XDocumentDefinitions" />
+      <End Role="XDocumentRoleAlert" EntitySet="XDocumentRoleAlerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentRoleRoute_XDocumentDefinition" Association="Self.FK_XDocumentRoleRoute_XDocumentDefinition">
+      <End Role="XDocumentDefinition" EntitySet="XDocumentDefinitions" />
+      <End Role="XDocumentRoleRoute" EntitySet="XDocumentRoleRoutes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentRoute_XDocumentDefinition" Association="Self.FK_XDocumentRoute_XDocumentDefinition">
+      <End Role="XDocumentDefinition" EntitySet="XDocumentDefinitions" />
+      <End Role="XDocumentRoute" EntitySet="XDocumentRoutes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentRouteUsers_XDocumentDefinition" Association="Self.FK_XDocumentRouteUsers_XDocumentDefinition">
+      <End Role="XDocumentDefinition" EntitySet="XDocumentDefinitions" />
+      <End Role="XDocumentRouteUsers" EntitySet="XDocumentRouteUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentSection_XDocumentDefinition" Association="Self.FK_XDocumentSection_XDocumentDefinition">
+      <End Role="XDocumentDefinition" EntitySet="XDocumentDefinitions" />
+      <End Role="XDocumentSection" EntitySet="XDocumentSections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentStore_XDocumentDefinition" Association="Self.FK_XDocumentStore_XDocumentDefinition">
+      <End Role="XDocumentDefinition" EntitySet="XDocumentDefinitions" />
+      <End Role="XDocumentStore" EntitySet="XDocumentStores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentUserAlert_XDocumentDefinition" Association="Self.FK_XDocumentUserAlert_XDocumentDefinition">
+      <End Role="XDocumentDefinition" EntitySet="XDocumentDefinitions" />
+      <End Role="XDocumentUserAlert" EntitySet="XDocumentUserAlerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportDefinition_XDocumentDefinition" Association="Self.FK_XReportDefinition_XDocumentDefinition">
+      <End Role="XDocumentDefinition" EntitySet="XDocumentDefinitions" />
+      <End Role="XReportDefinition" EntitySet="XReportDefinitions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentUserAlert_XDocumentFrequency" Association="Self.FK_XDocumentUserAlert_XDocumentFrequency">
+      <End Role="XDocumentFrequency" EntitySet="XDocumentFrequencies" />
+      <End Role="XDocumentUserAlert" EntitySet="XDocumentUserAlerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentReferedContent_XDocumentSection" Association="Self.FK_XDocumentReferedContent_XDocumentSection">
+      <End Role="XDocumentSection" EntitySet="XDocumentSections" />
+      <End Role="XDocumentReferedContent" EntitySet="XDocumentReferedContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentReferedContent_XDocumentTableContent" Association="Self.FK_XDocumentReferedContent_XDocumentTableContent">
+      <End Role="XDocumentTableContent" EntitySet="XDocumentTableContents" />
+      <End Role="XDocumentReferedContent" EntitySet="XDocumentReferedContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentTable_XDocumentSection" Association="Self.FK_XDocumentTable_XDocumentSection">
+      <End Role="XDocumentSection" EntitySet="XDocumentSections" />
+      <End Role="XDocumentTable" EntitySet="XDocumentTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportSection_XDocumentSection" Association="Self.FK_XReportSection_XDocumentSection">
+      <End Role="XDocumentSection" EntitySet="XDocumentSections" />
+      <End Role="XReportSection" EntitySet="XReportSections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportTableContent_XDocumentSection" Association="Self.FK_XReportTableContent_XDocumentSection">
+      <End Role="XDocumentSection" EntitySet="XDocumentSections" />
+      <End Role="XReportTableContent" EntitySet="XReportTableContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentTableTR_XDocumentTable" Association="Self.FK_XDocumentTableTR_XDocumentTable">
+      <End Role="XDocumentTable" EntitySet="XDocumentTables" />
+      <End Role="XDocumentTableTR" EntitySet="XDocumentTableTRs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentTableContent_XDocumentTableTD" Association="Self.FK_XDocumentTableContent_XDocumentTableTD">
+      <End Role="XDocumentTableTD" EntitySet="XDocumentTableTDs" />
+      <End Role="XDocumentTableContent" EntitySet="XDocumentTableContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XDocumentTableTD_XDocumentTableTR" Association="Self.FK_XDocumentTableTD_XDocumentTableTR">
+      <End Role="XDocumentTableTR" EntitySet="XDocumentTableTRs" />
+      <End Role="XDocumentTableTD" EntitySet="XDocumentTableTDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportSection_XReportDefinition" Association="Self.FK_XReportSection_XReportDefinition">
+      <End Role="XReportDefinition" EntitySet="XReportDefinitions" />
+      <End Role="XReportSection" EntitySet="XReportSections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportTable_XReportDefinition" Association="Self.FK_XReportTable_XReportDefinition">
+      <End Role="XReportDefinition" EntitySet="XReportDefinitions" />
+      <End Role="XReportTable" EntitySet="XReportTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportTableTR_XReportTable" Association="Self.FK_XReportTableTR_XReportTable">
+      <End Role="XReportTable" EntitySet="XReportTables" />
+      <End Role="XReportTableTR" EntitySet="XReportTableTRs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportTableContent_XReportTableTD" Association="Self.FK_XReportTableContent_XReportTableTD">
+      <End Role="XReportTableTD" EntitySet="XReportTableTDs" />
+      <End Role="XReportTableContent" EntitySet="XReportTableContents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XReportTableTD_XReportTableTR" Association="Self.FK_XReportTableTD_XReportTableTR">
+      <End Role="XReportTableTR" EntitySet="XReportTableTRs" />
+      <End Role="XReportTableTD" EntitySet="XReportTableTDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XTaskDefinition_XTaskDefinition" Association="Self.FK_XTaskDefinition_XTaskDefinition">
+      <End Role="XTaskDefinition" EntitySet="XTaskDefinitions" />
+      <End Role="XTaskDefinition1" EntitySet="XTaskDefinitions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
